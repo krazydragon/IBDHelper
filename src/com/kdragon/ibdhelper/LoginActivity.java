@@ -19,7 +19,6 @@ import com.parse.SignUpCallback;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,14 +39,10 @@ public class LoginActivity extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.activity_login);
+			//find and listen to buttons
 			_loginButton = (Button)findViewById(R.id.loginButton);
 			_regButton = (Button)findViewById(R.id.RegisterScreenButton);
 			_skipButton= (Button)findViewById(R.id.SkipRegisterScreenButton);
-			
-			
-			
-			
-			
 			_loginButton.setOnClickListener(this);
 			_regButton.setOnClickListener(this);
 			_skipButton.setOnClickListener(this);
@@ -61,6 +56,8 @@ public class LoginActivity extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		
 		EditText verifyPasswordInput = (EditText)findViewById(R.id.verifyPassword);
+		
+		//Login old user, Register new user, or skip and test application. 
 		if(v == _loginButton){
 			
 			

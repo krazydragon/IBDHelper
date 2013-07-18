@@ -23,5 +23,16 @@
     <string name="pounds">lbs</string>
     <string name="Height">Height</string>
     <string name="VerifyPass">Retype Password</string>
+    <string name="menu_support">Support</string>
+    <string name="MedCheckbox">With Food?</string>
+    <string name="Add_Med_Name">Medicine Name</string>
+    <string name="Add_Med_Description">Description</string>
+    <string name="Add_Med_AlarmText">"Alarms"</string>
+    <string name="Submit">Submit</string>
+    <string name="Alarm_hint">00:00</string>
+    <string name="Appointment_Date">Date</string>
+    <string name="Add_App_Name">Appointment Name</string>
+    <string name="add_app_loc">Location</string>
+    <string name="add_flare_pain">Pain Level</string>
 
 </resources>

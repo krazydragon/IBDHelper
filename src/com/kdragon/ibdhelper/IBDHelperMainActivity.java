@@ -19,24 +19,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
-import com.parse.ParseInstallation;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
-import com.parse.PushService;
-import com.parse.SignUpCallback;
-
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
@@ -65,8 +56,8 @@ public class IBDHelperMainActivity extends FragmentActivity implements ActionBar
 		ParseUser currentUser = ParseUser.getCurrentUser();
 		if (currentUser != null) {
 			Crouton.makeText(this, "Not found!", Style.ALERT).show();
-			Intent loginIntent = new Intent(this, LoginActivity.class);
-			startActivity(loginIntent);
+			/*Intent loginIntent = new Intent(this, LoginActivity.class);
+			startActivity(loginIntent);*/
 		} else {
 			Crouton.makeText(this, "found!", Style.ALERT).show();
 			
@@ -122,8 +113,37 @@ public class IBDHelperMainActivity extends FragmentActivity implements ActionBar
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.ibdhelper_main, menu);
+		
 		return true;
 	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		
+		switch(item.getItemId()) {
+		case R.id.menu_add:
+        
+			Intent addIntent = new Intent(this, AddActivity.class);
+			
+			startActivity(addIntent);
+			return true;
+		case R.id.action_settings:
+	        
+			Intent settingsIntent = new Intent(this, SettingsActivity.class);
+			startActivity(settingsIntent);
+			return true;
+		case R.id.menu_support:
+	        
+			Intent supportIntent = new Intent(this, SupportActivity.class);
+			startActivity(supportIntent);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
+	
+    
+
 
 	@Override
 	public void onTabSelected(ActionBar.Tab tab,

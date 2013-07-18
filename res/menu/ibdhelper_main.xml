@@ -1,9 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
+	<item android:id="@+id/menu_add" 
+        android:title="" 
+        android:icon="@drawable/plus" 
+        android:showAsAction="always" />
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
+        android:orderInCategory="0"
+        android:showAsAction="ifRoom"
         android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/menu_support"
+        android:orderInCategory="0"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_support"/>
 
 </menu>
