@@ -13,38 +13,40 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dip"
-            android:text="@string/login_title"
+            android:text="@string/login"
             android:textSize="25sp"
             android:textStyle="bold" />
         
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Email" />
-        
         <EditText
-            android:id="@+id/loginEmail"
+            android:id="@+id/loginUsername"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-         
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dip"
-            android:text="@string/Password" />
+            android:hint="@string/Username"/>
         
         <EditText
             android:id="@+id/loginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/Password"
             android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/verifyPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/VerifyPass"
+            android:inputType="textPassword"
+            android:visibility="invisible" >
+
+            <requestFocus />
+        </EditText>
          
         <Button
             android:id="@+id/loginButton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login_title" />
+            android:text="@string/login" />
  
 
         <Button
@@ -54,6 +56,15 @@
             android:layout_marginTop="40dip"
             android:background="@null"
             android:text="@string/noAcc"
+            android:textColor="#0000d4"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/SkipRegisterScreenButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:background="@null"
+            android:text="@string/skipReg"
             android:textColor="#0000d4"
             android:textStyle="bold" />
 

@@ -27,31 +27,31 @@ public final class R {
         public static final int my_progress_indeterminate=0x7f020003;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f080015;
-        public static final int RegisterScreenButton=0x7f080004;
+        public static final int LinearLayout1=0x7f080011;
+        public static final int RegisterScreenButton=0x7f080005;
+        public static final int SignupButton=0x7f080015;
+        public static final int SkipRegisterScreenButton=0x7f080006;
         public static final int action_settings=0x7f080018;
-        public static final int button1=0x7f080014;
-        public static final int editText1=0x7f08000d;
-        public static final int editText2=0x7f08000f;
-        public static final int editText3=0x7f080011;
-        public static final int editText4=0x7f080013;
-        public static final int expandableListView1=0x7f08000a;
-        public static final int expandableListView2=0x7f080009;
-        public static final int expandableListView3=0x7f080008;
+        public static final int editText1=0x7f080013;
+        public static final int expandableListView1=0x7f08000c;
+        public static final int expandableListView2=0x7f08000b;
+        public static final int expandableListView3=0x7f08000a;
         public static final int listView=0x7f080017;
-        public static final int listView1=0x7f080005;
-        public static final int listView2=0x7f080006;
-        public static final int listView3=0x7f080007;
-        public static final int loginButton=0x7f080003;
-        public static final int loginEmail=0x7f080001;
+        public static final int listView1=0x7f080007;
+        public static final int listView2=0x7f080008;
+        public static final int listView3=0x7f080009;
+        public static final int loginButton=0x7f080004;
         public static final int loginPassword=0x7f080002;
+        public static final int loginUsername=0x7f080001;
         public static final int pager=0x7f080000;
         public static final int progressBar1=0x7f080016;
-        public static final int textView1=0x7f08000b;
-        public static final int textView2=0x7f08000c;
-        public static final int textView3=0x7f08000e;
-        public static final int textView4=0x7f080010;
-        public static final int textView5=0x7f080012;
+        public static final int regEmail=0x7f080010;
+        public static final int regFirstName=0x7f08000e;
+        public static final int regLastName=0x7f08000f;
+        public static final int textView1=0x7f08000d;
+        public static final int textView2=0x7f080012;
+        public static final int textView3=0x7f080014;
+        public static final int verifyPassword=0x7f080003;
     }
     public static final class layout {
         public static final int activity_ibdhelper_main=0x7f030000;
@@ -71,21 +71,26 @@ public final class R {
     public static final class string {
         public static final int Email=0x7f05000b;
         public static final int FirstName=0x7f050009;
+        public static final int Height=0x7f050014;
         public static final int LastName=0x7f05000a;
         public static final int Password=0x7f05000c;
         public static final int RegistrationForm=0x7f050008;
         public static final int SignUp=0x7f05000d;
         public static final int Username=0x7f05000f;
+        public static final int VerifyPass=0x7f050015;
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-        public static final int login_title=0x7f05000e;
+        public static final int login=0x7f05000e;
         public static final int noAcc=0x7f050010;
+        public static final int pounds=0x7f050013;
+        public static final int skipReg=0x7f050011;
         public static final int title_section1=0x7f050002;
         public static final int title_section2=0x7f050003;
         public static final int title_section3=0x7f050004;
         public static final int title_section4=0x7f050005;
         public static final int title_section5=0x7f050006;
         public static final int title_section6=0x7f050007;
+        public static final int weight=0x7f050012;
     }
     public static final class style {
         /** 

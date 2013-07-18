@@ -1,3 +1,12 @@
+/*
+ * project	IBDHelper
+ * 
+ * package	com.kdragon.ibdhelper
+ * 
+ * @author	Ronaldo Barnes
+ * 
+ * date		Jul 15, 2013
+ */
 package com.kdragon.ibdhelper;
 
 import java.util.Locale;
@@ -5,7 +14,6 @@ import java.util.Locale;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.net.ParseException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -57,12 +65,11 @@ public class IBDHelperMainActivity extends FragmentActivity implements ActionBar
 		ParseUser currentUser = ParseUser.getCurrentUser();
 		if (currentUser != null) {
 			Crouton.makeText(this, "Not found!", Style.ALERT).show();
-			Intent listIntent = new Intent(this, LoginActivity.class);
-			startActivity(listIntent);
+			Intent loginIntent = new Intent(this, LoginActivity.class);
+			startActivity(loginIntent);
 		} else {
 			Crouton.makeText(this, "found!", Style.ALERT).show();
-			Intent listIntent = new Intent(this, LoginActivity.class);
-			startActivity(listIntent);
+			
 		}
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ibdhelper_main);

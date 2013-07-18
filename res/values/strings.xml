@@ -15,8 +15,13 @@
     <string name="Email">Email</string>
     <string name="Password">Password</string>
     <string name="SignUp">SignUp</string>
-    <string name="login_title">login</string>
+    <string name="login">Login</string>
     <string name="Username">Username</string>
     <string name="noAcc">I don\'t have account. Register Me!</string>
+    <string name="skipReg">Skip. Login in later!</string>
+    <string name="weight">Weight</string>
+    <string name="pounds">lbs</string>
+    <string name="Height">Height</string>
+    <string name="VerifyPass">Retype Password</string>
 
 </resources>
