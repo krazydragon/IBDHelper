@@ -122,7 +122,7 @@ public class IBDHelperMainActivity extends FragmentActivity implements ActionBar
 		switch(item.getItemId()) {
 		case R.id.menu_add:
         
-			Intent addIntent = new Intent(this, AddActivity.class);
+			Intent addIntent = new Intent(this, AddListActivity.class);
 			
 			startActivity(addIntent);
 			return true;

@@ -34,5 +34,11 @@
     <string name="Add_App_Name">Appointment Name</string>
     <string name="add_app_loc">Location</string>
     <string name="add_flare_pain">Pain Level</string>
-
+	<string-array name="add_list">
+        <item>Add Food/Water</item>
+        <item>Add Flareups</item>
+        <item>Add BM</item>
+        <item>Add Appointment</item>
+        <item>Add Medicine </item>
+    </string-array>
 </resources>

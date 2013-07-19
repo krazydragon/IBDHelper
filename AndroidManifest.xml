@@ -32,9 +32,13 @@
         <activity android:name="LoginActivity" android:label="@string/app_name"
     		android:noHistory="true" android:excludeFromRecents="true">
 		</activity>
-		<activity android:name="AddActivity"
-			android:noHistory="true" android:excludeFromRecents="true">
+		<activity android:name="AddListActivity"
+			android:excludeFromRecents="true">
 		</activity>
+		<activity android:name="AddDetailActivity"
+			android:excludeFromRecents="true">
+		</activity>
+		
 		<activity android:name="SettingsActivity"
 			android:noHistory="true" android:excludeFromRecents="true">
 		</activity>

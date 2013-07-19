@@ -1,12 +1,4 @@
-/*
- * project	IBDHelper
- * 
- * package	com.kdragon.ibdhelper
- * 
- * @author	Ronaldo Barnes
- * 
- * date		Jul 17, 2013
- */
+/** Automatically generated file. DO NOT MODIFY */
 package com.kdragon.ibdhelper;
 
 public final class BuildConfig {
