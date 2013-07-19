@@ -10,12 +10,12 @@
 package com.kdragon.ibdhelper;
 
 import com.kdragon.other.EmailRetriever;
+import com.kdragon.other.WebInterface;
 import com.parse.LogInCallback;
 import com.parse.ParseAnonymousUtils;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
-
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 import android.app.Activity;
@@ -39,6 +39,12 @@ public class LoginActivity extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.activity_login);
+			
+			Boolean connected = WebInterface.getConnectionStatus(this);
+      		
+	      	if(!connected){
+	    			Crouton.makeText(this, "No network found!", Style.ALERT).show();
+	     		}
 			//find and listen to buttons
 			_loginButton = (Button)findViewById(R.id.loginButton);
 			_regButton = (Button)findViewById(R.id.RegisterScreenButton);

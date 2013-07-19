@@ -12,11 +12,6 @@ package com.kdragon.ibdhelper;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class AddDetailActivity extends Activity{
 	
@@ -37,7 +32,7 @@ public class AddDetailActivity extends Activity{
 		}else if(string.equals(addMenuList[2])){
 			setContentView(R.layout.fragment_add_bm);
 		}else if(string.equals(addMenuList[3])){
-			setContentView(R.layout.fragment_appointments);
+			setContentView(R.layout.fragment_add_appointment);
 		}else{
 			setContentView(R.layout.fragment_add_med);			
 		}

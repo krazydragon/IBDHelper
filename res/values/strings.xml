@@ -41,4 +41,12 @@
         <item>Add Appointment</item>
         <item>Add Medicine </item>
     </string-array>
+        <string name="links">Links</string>
+        <string name="Groups">Groups</string>
+        <string name="News">News</string>
+        <string name="UserInformation">User Information</string>
+        <string name="LinkAccounts">Links Accounts</string>
+        <string name="SendFeedback">Send Feedback</string>
+        <string name="About">About</string>
+        <string name="Please">Please add Information</string>
 </resources>

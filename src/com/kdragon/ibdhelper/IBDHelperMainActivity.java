@@ -56,8 +56,8 @@ public class IBDHelperMainActivity extends FragmentActivity implements ActionBar
 		ParseUser currentUser = ParseUser.getCurrentUser();
 		if (currentUser != null) {
 			Crouton.makeText(this, "Not found!", Style.ALERT).show();
-			/*Intent loginIntent = new Intent(this, LoginActivity.class);
-			startActivity(loginIntent);*/
+			Intent loginIntent = new Intent(this, LoginActivity.class);
+			startActivity(loginIntent);
 		} else {
 			Crouton.makeText(this, "found!", Style.ALERT).show();
 			

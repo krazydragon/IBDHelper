@@ -8,19 +8,30 @@
     <ExpandableListView
         android:id="@+id/expandableListView3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+
     </ExpandableListView>
 
     <ExpandableListView
         android:id="@+id/expandableListView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+
     </ExpandableListView>
 
     <ExpandableListView
         android:id="@+id/expandableListView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ExpandableListView>
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
 
+    </ExpandableListView>
+	<TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Please"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 </LinearLayout>
