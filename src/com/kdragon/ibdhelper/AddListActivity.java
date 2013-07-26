@@ -9,44 +9,39 @@
  */
 package com.kdragon.ibdhelper;
 
+import java.util.List;
+
+import com.parse.FindCallback;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseException;
+
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class AddListActivity extends ListActivity {
+public class AddListActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         
-        // storing string resources into Array
-        String[] add_menu = getResources().getStringArray(R.array.add_list);
-         
-        // Binding resources Array to ListAdapter
-        this.setListAdapter(new ArrayAdapter<String>(this, R.layout.list_add_menu, R.id.label, add_menu));
-         
-        ListView lv = getListView();
-        final Intent addDetailIntent = new Intent(this, AddDetailActivity.class);
-        // listening to single list item on click
-        lv.setOnItemClickListener(new OnItemClickListener() {
-          public void onItemClick(AdapterView<?> parent, View view,
-              int position, long id) {
-               
-              // selected item
-             String menuItem = ((TextView) view).getText().toString();
-            
-        	
-            
-			addDetailIntent.putExtra("item", menuItem);
-			startActivity(addDetailIntent);
-             
-          }
-        });
+        setContentView(R.layout.fragment_item_detail);
+    
+        TextView detailName =(TextView)findViewById(R.id.detailName);
+        TextView detailDesciption =(TextView)findViewById(R.id.detailText);
+    	
+    	Intent intent = getIntent();
+        detailName.setText(intent.getStringExtra("name"));
+        detailDesciption.setText(intent.getStringExtra("desciption"));
     }
+    
+    
 }

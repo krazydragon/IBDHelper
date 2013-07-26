@@ -4,8 +4,9 @@
     android:layout_height="fill_parent">
  
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/loginPopup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dip" >
         
@@ -30,17 +31,10 @@
             android:hint="@string/Password"
             android:inputType="textPassword" />
 
-        <EditText
-            android:id="@+id/verifyPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/VerifyPass"
-            android:inputType="textPassword"
-            android:visibility="invisible" >
+        
 
-            <requestFocus />
-        </EditText>
+           
+       
          
         <Button
             android:id="@+id/loginButton"

@@ -7,11 +7,12 @@
     <LinearLayout
         android:id="@+id/MedicineAddLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+         android:background="#000000">
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/medName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -21,20 +22,20 @@
         </EditText>
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/medDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/Add_Med_Description" />
 
         <CheckBox
-            android:id="@+id/checkBox1"
+            android:id="@+id/MedCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/MedCheckbox" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/regform"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Add_Med_AlarmText"
@@ -43,16 +44,14 @@
         <LinearLayout
             android:id="@+id/AlarmLayout1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
 
-            <EditText
-                android:id="@+id/AppDate"
+            <TimePicker
+                android:id="@+id/timePicker1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/Alarm_hint"
-                android:inputType="time" />
+                android:layout_weight="1" />
 
             <CheckBox
                 android:id="@+id/AlarmcheckBox"
@@ -66,14 +65,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-            <EditText
-                android:id="@+id/Alarm2"
+            <TimePicker
+                android:id="@+id/medTimePicker2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/Alarm_hint"
-                android:inputType="time" />
+                android:layout_weight="1" />
 
             <CheckBox
                 android:id="@+id/CheckBox01"
@@ -85,7 +81,8 @@
         <LinearLayout
             android:id="@+id/AlarmLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
 
             <EditText
                 android:id="@+id/Alarm3"
@@ -106,7 +103,8 @@
         <LinearLayout
             android:id="@+id/AlarmLayout4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
 
             <EditText
                 android:id="@+id/Alarm4"
@@ -124,12 +122,18 @@
                 android:layout_weight="1" />
         </LinearLayout>
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Submit" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Submit" />
+         <Button
+             android:id="@+id/cancelButton"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/cancel" />
+
+    </LinearLayout>
 
 </LinearLayout>

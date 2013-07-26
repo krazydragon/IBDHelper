@@ -11,7 +11,7 @@
         android:orientation="vertical" >
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/medName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -21,20 +21,20 @@
         </EditText>
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/medDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/Add_Med_Description" />
 
         <CheckBox
-            android:id="@+id/checkBox1"
+            android:id="@+id/MedCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/MedCheckbox" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/regform"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Add_Med_AlarmText"
@@ -127,7 +127,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/addButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Submit" />

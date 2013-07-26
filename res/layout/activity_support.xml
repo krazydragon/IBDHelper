@@ -6,19 +6,19 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/Button02"
+        android:id="@+id/linksButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/links" />
 
     <Button
-        android:id="@+id/Button01"
+        android:id="@+id/groupsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Groups" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/newsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/News" />

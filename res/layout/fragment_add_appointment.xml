@@ -10,8 +10,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
+        
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/medName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -21,7 +22,7 @@
         </EditText>
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/medDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -47,7 +48,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/addButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Submit" />

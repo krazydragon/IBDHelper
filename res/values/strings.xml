@@ -3,8 +3,8 @@
 
     <string name="app_name">IBDHelper</string>
     <string name="action_settings">Settings</string>
-    <string name="title_section1">My Day</string>
-    <string name="title_section2">My Medicine</string>
+    <string name="title_section2">My Day</string>
+    <string name="title_section1">My Medicine</string>
     <string name="title_section3">My Foods</string>
     <string name="title_section4">My Appointments</string>
     <string name="title_section5">My Symtoms</string>
@@ -49,4 +49,6 @@
         <string name="SendFeedback">Send Feedback</string>
         <string name="About">About</string>
         <string name="Please">Please add Information</string>
+        <string name="app_id ">379523005483259</string>
+        <string name="cancel">Cancel</string>
 </resources>

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/regform"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_flare_pain"
@@ -24,7 +24,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/addButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Submit" />

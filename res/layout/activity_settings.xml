@@ -11,19 +11,19 @@
         android:text="@string/UserInformation" />
 
     <Button
-        android:id="@+id/Button02"
+        android:id="@+id/buttonLinks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/LinkAccounts" />
 
     <Button
-        android:id="@+id/Button01"
+        android:id="@+id/buttonGroups"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/SendFeedback" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/addButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/About" />

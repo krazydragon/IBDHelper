@@ -9,9 +9,136 @@ package com.kdragon.ibdhelper;
 
 public final class R {
     public static final class array {
-        public static final int add_list=0x7f060000;
+        public static final int add_list=0x7f080000;
     }
     public static final class attr {
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behindOffset=0x7f010005;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behindScrollScale=0x7f010007;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behindWidth=0x7f010006;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cancelLabel=0x7f010001;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fadeDegree=0x7f01000d;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fadeEnabled=0x7f01000c;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>left</code></td><td>0</td><td></td></tr>
+<tr><td><code>right</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int mode=0x7f010002;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int okLabel=0x7f010000;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int selectorDrawable=0x7f01000f;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int selectorEnabled=0x7f01000e;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int shadowDrawable=0x7f01000a;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int shadowWidth=0x7f01000b;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int touchModeAbove=0x7f010008;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int touchModeBehind=0x7f010009;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int viewAbove=0x7f010003;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int viewBehind=0x7f010004;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -20,67 +147,163 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f070000;
+        public static final int activity_vertical_margin=0x7f070001;
     }
     public static final class drawable {
-        public static final int custom_progress_bar_horizontal=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int loadingicon=0x7f020002;
-        public static final int my_progress_indeterminate=0x7f020003;
-        public static final int plus=0x7f020004;
-        public static final int ribbon=0x7f020005;
+        public static final int activated_background_holo_dark=0x7f020000;
+        public static final int btn_check_holo_dark=0x7f020001;
+        public static final int btn_check_off_disabled_focused_holo_dark=0x7f020002;
+        public static final int btn_check_off_disabled_holo_dark=0x7f020003;
+        public static final int btn_check_off_focused_holo_dark=0x7f020004;
+        public static final int btn_check_off_holo_dark=0x7f020005;
+        public static final int btn_check_off_pressed_holo_dark=0x7f020006;
+        public static final int btn_check_on_disabled_focused_holo_dark=0x7f020007;
+        public static final int btn_check_on_disabled_holo_dark=0x7f020008;
+        public static final int btn_check_on_focused_holo_dark=0x7f020009;
+        public static final int btn_check_on_holo_dark=0x7f02000a;
+        public static final int btn_check_on_pressed_holo_dark=0x7f02000b;
+        public static final int btn_default_disabled_focused_holo_dark=0x7f02000c;
+        public static final int btn_default_disabled_holo_dark=0x7f02000d;
+        public static final int btn_default_focused_holo_dark=0x7f02000e;
+        public static final int btn_default_holo_dark=0x7f02000f;
+        public static final int btn_default_normal_holo_dark=0x7f020010;
+        public static final int btn_default_pressed_holo_dark=0x7f020011;
+        public static final int btn_radio_holo_dark=0x7f020012;
+        public static final int btn_radio_off_disabled_focused_holo_dark=0x7f020013;
+        public static final int btn_radio_off_disabled_holo_dark=0x7f020014;
+        public static final int btn_radio_off_focused_holo_dark=0x7f020015;
+        public static final int btn_radio_off_holo_dark=0x7f020016;
+        public static final int btn_radio_off_pressed_holo_dark=0x7f020017;
+        public static final int btn_radio_on_disabled_focused_holo_dark=0x7f020018;
+        public static final int btn_radio_on_disabled_holo_dark=0x7f020019;
+        public static final int btn_radio_on_focused_holo_dark=0x7f02001a;
+        public static final int btn_radio_on_holo_dark=0x7f02001b;
+        public static final int btn_radio_on_pressed_holo_dark=0x7f02001c;
+        public static final int custom_progress_bar_horizontal=0x7f02001d;
+        public static final int edit_text_holo_dark=0x7f02001e;
+        public static final int fastscroll_thumb_default_holo=0x7f02001f;
+        public static final int fastscroll_thumb_holo=0x7f020020;
+        public static final int fastscroll_thumb_pressed_holo=0x7f020021;
+        public static final int ic_explain_about=0x7f020022;
+        public static final int ic_launcher=0x7f020023;
+        public static final int item_background_holo_dark=0x7f020024;
+        public static final int list_activated_holo=0x7f020025;
+        public static final int list_focused_holo=0x7f020026;
+        public static final int list_longpressed_holo=0x7f020027;
+        public static final int list_pressed_holo_dark=0x7f020028;
+        public static final int list_selector_background_transition_holo_dark=0x7f020029;
+        public static final int list_selector_disabled_holo_dark=0x7f02002a;
+        public static final int list_selector_holo_dark=0x7f02002b;
+        public static final int loadingicon=0x7f02002c;
+        public static final int my_progress_indeterminate=0x7f02002d;
+        public static final int plus=0x7f02002e;
+        public static final int progress_bg_holo_dark=0x7f02002f;
+        public static final int progress_horizontal_holo_dark=0x7f020030;
+        public static final int progress_indeterminate_horizontal_holo_dark=0x7f020031;
+        public static final int progress_primary_holo_dark=0x7f020032;
+        public static final int progress_secondary_holo_dark=0x7f020033;
+        public static final int progressbar_indeterminate_holo1=0x7f020034;
+        public static final int progressbar_indeterminate_holo2=0x7f020035;
+        public static final int progressbar_indeterminate_holo3=0x7f020036;
+        public static final int progressbar_indeterminate_holo4=0x7f020037;
+        public static final int progressbar_indeterminate_holo5=0x7f020038;
+        public static final int progressbar_indeterminate_holo6=0x7f020039;
+        public static final int progressbar_indeterminate_holo7=0x7f02003a;
+        public static final int progressbar_indeterminate_holo8=0x7f02003b;
+        public static final int ribbon=0x7f02003c;
+        public static final int sm_ribbion=0x7f02003d;
+        public static final int spinner_background_holo_dark=0x7f02003e;
+        public static final int spinner_default_holo_dark=0x7f02003f;
+        public static final int spinner_disabled_holo_dark=0x7f020040;
+        public static final int spinner_focused_holo_dark=0x7f020041;
+        public static final int spinner_pressed_holo_dark=0x7f020042;
+        public static final int textfield_activated_holo_dark=0x7f020043;
+        public static final int textfield_default_holo_dark=0x7f020044;
+        public static final int textfield_disabled_focused_holo_dark=0x7f020045;
+        public static final int textfield_disabled_holo_dark=0x7f020046;
+        public static final int textfield_focused_holo_dark=0x7f020047;
     }
     public static final class id {
-        public static final int Alarm2=0x7f090017;
-        public static final int Alarm3=0x7f09001a;
-        public static final int Alarm4=0x7f09001d;
-        public static final int AlarmLayout1=0x7f090014;
-        public static final int AlarmLayout2=0x7f090016;
-        public static final int AlarmLayout3=0x7f090019;
-        public static final int AlarmLayout4=0x7f09001c;
-        public static final int AlarmcheckBox=0x7f090015;
-        public static final int AppDate=0x7f09000f;
-        public static final int Button01=0x7f090009;
-        public static final int Button02=0x7f090008;
-        public static final int Button03=0x7f090007;
-        public static final int CheckBox01=0x7f090018;
-        public static final int CheckBox02=0x7f09001b;
-        public static final int CheckBox04=0x7f09001e;
-        public static final int EditText01=0x7f090010;
-        public static final int LinearLayout1=0x7f09000b;
-        public static final int MedicineAddLayout=0x7f09000c;
-        public static final int RegisterScreenButton=0x7f090005;
-        public static final int SignupButton=0x7f09002a;
-        public static final int SkipRegisterScreenButton=0x7f090006;
-        public static final int action_settings=0x7f09002f;
-        public static final int button1=0x7f09000a;
-        public static final int checkBox1=0x7f090013;
-        public static final int editText1=0x7f09000d;
-        public static final int editText3=0x7f09000e;
-        public static final int expandableListView1=0x7f090024;
-        public static final int expandableListView2=0x7f090023;
-        public static final int expandableListView3=0x7f090022;
-        public static final int label=0x7f09002d;
-        public static final int listView=0x7f09002c;
-        public static final int listView1=0x7f09001f;
-        public static final int listView2=0x7f090020;
-        public static final int listView3=0x7f090021;
-        public static final int loginButton=0x7f090004;
-        public static final int loginPassword=0x7f090002;
-        public static final int loginUsername=0x7f090001;
-        public static final int menu_add=0x7f09002e;
-        public static final int menu_support=0x7f090030;
-        public static final int pager=0x7f090000;
-        public static final int progressBar1=0x7f09002b;
-        public static final int regEmail=0x7f090027;
-        public static final int regFirstName=0x7f090025;
-        public static final int regLastName=0x7f090026;
-        public static final int seekBar1=0x7f090012;
-        public static final int textView1=0x7f090011;
-        public static final int textView2=0x7f090028;
-        public static final int textView3=0x7f090029;
-        public static final int verifyPassword=0x7f090003;
+        public static final int Alarm2=0x7f06001f;
+        public static final int Alarm3=0x7f060022;
+        public static final int Alarm4=0x7f060025;
+        public static final int AlarmLayout1=0x7f06001c;
+        public static final int AlarmLayout2=0x7f06001e;
+        public static final int AlarmLayout3=0x7f060021;
+        public static final int AlarmLayout4=0x7f060024;
+        public static final int AlarmcheckBox=0x7f06001d;
+        public static final int AppDate=0x7f060017;
+        public static final int Button03=0x7f06000c;
+        public static final int CheckBox01=0x7f060020;
+        public static final int CheckBox02=0x7f060023;
+        public static final int CheckBox04=0x7f060026;
+        public static final int EditText01=0x7f060018;
+        public static final int FrameLayout1=0x7f060047;
+        public static final int LinearLayout1=0x7f060010;
+        public static final int MedCheckBox=0x7f06001b;
+        public static final int MedicineAddLayout=0x7f060014;
+        public static final int RegisterScreenButton=0x7f06000a;
+        public static final int RelativeLayout1=0x7f06003a;
+        public static final int ScrollView1=0x7f060030;
+        public static final int SignupButton=0x7f060038;
+        public static final int SkipRegisterScreenButton=0x7f06000b;
+        public static final int action_settings=0x7f06004c;
+        public static final int addButton=0x7f06000f;
+        public static final int buttonGroups=0x7f06000e;
+        public static final int buttonLinks=0x7f06000d;
+        public static final int cancelButton=0x7f060029;
+        public static final int contentTextFields=0x7f06003f;
+        public static final int detailName=0x7f06003b;
+        public static final int detailText=0x7f060036;
+        public static final int email=0x7f060042;
+        public static final int expandableListView1=0x7f06002f;
+        public static final int expandableListView2=0x7f06002e;
+        public static final int expandableListView3=0x7f06002d;
+        public static final int fullscreen=0x7f060003;
+        public static final int groupsButton=0x7f060012;
+        public static final int label=0x7f06003d;
+        public static final int left=0x7f060000;
+        public static final int linksButton=0x7f060011;
+        public static final int listView1=0x7f06002a;
+        public static final int listView2=0x7f06002b;
+        public static final int listView3=0x7f06002c;
+        public static final int loginButton=0x7f060009;
+        public static final int loginPassword=0x7f060008;
+        public static final int loginPopup=0x7f060006;
+        public static final int loginUsername=0x7f060007;
+        public static final int margin=0x7f060002;
+        public static final int medDescription=0x7f060016;
+        public static final int medListView=0x7f06003c;
+        public static final int medName=0x7f060015;
+        public static final int medTimePicker2=0x7f060028;
+        public static final int menu_add=0x7f06004b;
+        public static final int menu_logout=0x7f06004e;
+        public static final int menu_support=0x7f06004d;
+        public static final int newsButton=0x7f060013;
+        public static final int okCancelBar=0x7f060046;
+        public static final int orrequired1=0x7f060041;
+        public static final int pager=0x7f060005;
+        public static final int password1=0x7f060043;
+        public static final int password2=0x7f060044;
+        public static final int progressBar1=0x7f060039;
+        public static final int regEmail=0x7f060035;
+        public static final int regFirstName=0x7f060033;
+        public static final int regLastName=0x7f060034;
+        public static final int regRePassword=0x7f060032;
+        public static final int regUsername=0x7f060031;
+        public static final int regform=0x7f060019;
+        public static final int required=0x7f060040;
+        public static final int right=0x7f060001;
+        public static final int seekBar1=0x7f06001a;
+        public static final int selected_view=0x7f060004;
+        public static final int slidingmenumain=0x7f060048;
+        public static final int text=0x7f06003e;
+        public static final int textView3=0x7f060037;
+        public static final int timePicker1=0x7f060027;
+        public static final int url=0x7f060045;
+        public static final int widget_okcancelbar_cancel=0x7f060049;
+        public static final int widget_okcancelbar_ok=0x7f06004a;
     }
     public static final class layout {
         public static final int activity_ibdhelper_main=0x7f030000;
@@ -96,55 +319,81 @@ public final class R {
         public static final int fragment_day=0x7f03000a;
         public static final int fragment_edituser=0x7f03000b;
         public static final int fragment_foods=0x7f03000c;
-        public static final int fragment_meds=0x7f03000d;
-        public static final int fragment_symtoms=0x7f03000e;
-        public static final int list_add_menu=0x7f03000f;
+        public static final int fragment_item_detail=0x7f03000d;
+        public static final int fragment_meds=0x7f03000e;
+        public static final int fragment_symtoms=0x7f03000f;
+        public static final int list_add_menu=0x7f030010;
+        public static final int listview_item=0x7f030011;
+        public static final int main=0x7f030012;
+        public static final int menu_frame=0x7f030013;
+        public static final int slidingmenumain=0x7f030014;
+        public static final int widget_ok_cancel_bar=0x7f030015;
     }
     public static final class menu {
-        public static final int ibdhelper_main=0x7f080000;
+        public static final int ibdhelper_main=0x7f090000;
     }
     public static final class string {
-        public static final int About=0x7f050027;
-        public static final int Add_App_Name=0x7f05001e;
-        public static final int Add_Med_AlarmText=0x7f05001a;
-        public static final int Add_Med_Description=0x7f050019;
-        public static final int Add_Med_Name=0x7f050018;
-        public static final int Alarm_hint=0x7f05001c;
-        public static final int Appointment_Date=0x7f05001d;
-        public static final int Email=0x7f05000b;
-        public static final int FirstName=0x7f050009;
-        public static final int Groups=0x7f050022;
-        public static final int Height=0x7f050014;
-        public static final int LastName=0x7f05000a;
-        public static final int LinkAccounts=0x7f050025;
-        public static final int MedCheckbox=0x7f050017;
-        public static final int News=0x7f050023;
-        public static final int Password=0x7f05000c;
-        public static final int Please=0x7f050028;
-        public static final int RegistrationForm=0x7f050008;
-        public static final int SendFeedback=0x7f050026;
-        public static final int SignUp=0x7f05000d;
-        public static final int Submit=0x7f05001b;
-        public static final int UserInformation=0x7f050024;
-        public static final int Username=0x7f05000f;
-        public static final int VerifyPass=0x7f050015;
-        public static final int action_settings=0x7f050001;
-        public static final int add_app_loc=0x7f05001f;
-        public static final int add_flare_pain=0x7f050020;
-        public static final int app_name=0x7f050000;
-        public static final int links=0x7f050021;
-        public static final int login=0x7f05000e;
-        public static final int menu_support=0x7f050016;
-        public static final int noAcc=0x7f050010;
-        public static final int pounds=0x7f050013;
-        public static final int skipReg=0x7f050011;
-        public static final int title_section1=0x7f050002;
-        public static final int title_section2=0x7f050003;
-        public static final int title_section3=0x7f050004;
-        public static final int title_section4=0x7f050005;
-        public static final int title_section5=0x7f050006;
-        public static final int title_section6=0x7f050007;
-        public static final int weight=0x7f050012;
+        public static final int About=0x7f040039;
+        public static final int Add_App_Name=0x7f040030;
+        public static final int Add_Med_AlarmText=0x7f04002c;
+        public static final int Add_Med_Description=0x7f04002b;
+        public static final int Add_Med_Name=0x7f04002a;
+        public static final int Alarm_hint=0x7f04002e;
+        public static final int Appointment_Date=0x7f04002f;
+        public static final int Email=0x7f04001d;
+        public static final int FirstName=0x7f04001b;
+        public static final int Groups=0x7f040034;
+        public static final int Height=0x7f040026;
+        public static final int LastName=0x7f04001c;
+        public static final int LinkAccounts=0x7f040037;
+        public static final int MedCheckbox=0x7f040029;
+        public static final int News=0x7f040035;
+        public static final int Password=0x7f04001e;
+        public static final int Please=0x7f04003a;
+        public static final int RegistrationForm=0x7f04001a;
+        public static final int SendFeedback=0x7f040038;
+        public static final int SignUp=0x7f04001f;
+        public static final int Submit=0x7f04002d;
+        public static final int UserInformation=0x7f040036;
+        public static final int Username=0x7f040021;
+        public static final int VerifyPass=0x7f040027;
+        public static final int action_settings=0x7f040013;
+        public static final int add_app_loc=0x7f040031;
+        public static final int add_flare_pain=0x7f040032;
+        public static final int app_id =0x7f04003b;
+        public static final int app_name=0x7f040000;
+        public static final int cancel=0x7f04003c;
+        public static final int global_about=0x7f040002;
+        public static final int global_accept=0x7f04000a;
+        public static final int global_address=0x7f040009;
+        public static final int global_cancel=0x7f040003;
+        public static final int global_email=0x7f040007;
+        public static final int global_name=0x7f040005;
+        public static final int global_password=0x7f040004;
+        public static final int global_phone=0x7f040006;
+        public static final int global_submit=0x7f040001;
+        public static final int global_website=0x7f040008;
+        public static final int links=0x7f040033;
+        public static final int login=0x7f040020;
+        public static final int menu_support=0x7f040028;
+        public static final int noAcc=0x7f040022;
+        public static final int pounds=0x7f040025;
+        public static final int skipReg=0x7f040023;
+        public static final int title_section1=0x7f040015;
+        public static final int title_section2=0x7f040014;
+        public static final int title_section3=0x7f040016;
+        public static final int title_section4=0x7f040017;
+        public static final int title_section5=0x7f040018;
+        public static final int title_section6=0x7f040019;
+        public static final int validator_alnum=0x7f04000f;
+        public static final int validator_confirm=0x7f04000e;
+        public static final int validator_email=0x7f04000b;
+        public static final int validator_empty=0x7f04000c;
+        public static final int validator_hex=0x7f040010;
+        public static final int validator_phone=0x7f040012;
+        public static final int validator_regexp=0x7f040011;
+        public static final int validator_url=0x7f04000d;
+        public static final int weight=0x7f040024;
     }
     public static final class style {
         /** 
@@ -168,11 +417,303 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f050001;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int CustomProgressBar=0x7f070002;
+        public static final int AppTheme=0x7f050002;
+        public static final int ButtonMyTheme=0x7f050006;
+        public static final int CheckBoxMyTheme=0x7f050005;
+        public static final int CustomProgressBar=0x7f050003;
+        public static final int EditTextMyTheme=0x7f050004;
+        public static final int ImageButtonMyTheme=0x7f050007;
+        public static final int MyTheme=0x7f05000c;
+        public static final int ProgressBarMyTheme=0x7f05000b;
+        public static final int SpinnerDropDownItemMyTheme=0x7f05000a;
+        public static final int SpinnerMyTheme=0x7f050008;
+        public static final int SpinnerMyTheme_DropDown=0x7f050009;
+        public static final int Validator_Light=0x7f050000;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a OkCancelBar.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #OkCancelBar_cancelLabel com.kdragon.ibdhelper:cancelLabel}</code></td><td></td></tr>
+           <tr><td><code>{@link #OkCancelBar_okLabel com.kdragon.ibdhelper:okLabel}</code></td><td></td></tr>
+           </table>
+           @see #OkCancelBar_cancelLabel
+           @see #OkCancelBar_okLabel
+         */
+        public static final int[] OkCancelBar = {
+            0x7f010000, 0x7f010001
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#cancelLabel}
+          attribute's value can be found in the {@link #OkCancelBar} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:cancelLabel
+        */
+        public static final int OkCancelBar_cancelLabel = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#okLabel}
+          attribute's value can be found in the {@link #OkCancelBar} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:okLabel
+        */
+        public static final int OkCancelBar_okLabel = 0;
+        /** Attributes that can be used with a SlidingMenu.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SlidingMenu_behindOffset com.kdragon.ibdhelper:behindOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_behindScrollScale com.kdragon.ibdhelper:behindScrollScale}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_behindWidth com.kdragon.ibdhelper:behindWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_fadeDegree com.kdragon.ibdhelper:fadeDegree}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_fadeEnabled com.kdragon.ibdhelper:fadeEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_mode com.kdragon.ibdhelper:mode}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_selectorDrawable com.kdragon.ibdhelper:selectorDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_selectorEnabled com.kdragon.ibdhelper:selectorEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_shadowDrawable com.kdragon.ibdhelper:shadowDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_shadowWidth com.kdragon.ibdhelper:shadowWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_touchModeAbove com.kdragon.ibdhelper:touchModeAbove}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_touchModeBehind com.kdragon.ibdhelper:touchModeBehind}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_viewAbove com.kdragon.ibdhelper:viewAbove}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_viewBehind com.kdragon.ibdhelper:viewBehind}</code></td><td></td></tr>
+           </table>
+           @see #SlidingMenu_behindOffset
+           @see #SlidingMenu_behindScrollScale
+           @see #SlidingMenu_behindWidth
+           @see #SlidingMenu_fadeDegree
+           @see #SlidingMenu_fadeEnabled
+           @see #SlidingMenu_mode
+           @see #SlidingMenu_selectorDrawable
+           @see #SlidingMenu_selectorEnabled
+           @see #SlidingMenu_shadowDrawable
+           @see #SlidingMenu_shadowWidth
+           @see #SlidingMenu_touchModeAbove
+           @see #SlidingMenu_touchModeBehind
+           @see #SlidingMenu_viewAbove
+           @see #SlidingMenu_viewBehind
+         */
+        public static final int[] SlidingMenu = {
+            0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005,
+            0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009,
+            0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d,
+            0x7f01000e, 0x7f01000f
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#behindOffset}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:behindOffset
+        */
+        public static final int SlidingMenu_behindOffset = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#behindScrollScale}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:behindScrollScale
+        */
+        public static final int SlidingMenu_behindScrollScale = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#behindWidth}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:behindWidth
+        */
+        public static final int SlidingMenu_behindWidth = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#fadeDegree}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:fadeDegree
+        */
+        public static final int SlidingMenu_fadeDegree = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#fadeEnabled}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:fadeEnabled
+        */
+        public static final int SlidingMenu_fadeEnabled = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#mode}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>left</code></td><td>0</td><td></td></tr>
+<tr><td><code>right</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name android:mode
+        */
+        public static final int SlidingMenu_mode = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#selectorDrawable}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:selectorDrawable
+        */
+        public static final int SlidingMenu_selectorDrawable = 13;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#selectorEnabled}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:selectorEnabled
+        */
+        public static final int SlidingMenu_selectorEnabled = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#shadowDrawable}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:shadowDrawable
+        */
+        public static final int SlidingMenu_shadowDrawable = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#shadowWidth}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:shadowWidth
+        */
+        public static final int SlidingMenu_shadowWidth = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#touchModeAbove}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name android:touchModeAbove
+        */
+        public static final int SlidingMenu_touchModeAbove = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#touchModeBehind}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name android:touchModeBehind
+        */
+        public static final int SlidingMenu_touchModeBehind = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#viewAbove}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:viewAbove
+        */
+        public static final int SlidingMenu_viewAbove = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.kdragon.ibdhelper.R.attr#viewBehind}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:viewBehind
+        */
+        public static final int SlidingMenu_viewBehind = 2;
+    };
 }

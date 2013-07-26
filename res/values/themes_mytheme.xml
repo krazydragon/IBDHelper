@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="MyTheme" parent="android:Theme.Black">
+
+    <item name="android:editTextStyle">@style/EditTextMyTheme</item>
+
+    <item name="android:checkboxStyle">@style/CheckBoxMyTheme</item>
+
+    <item name="android:buttonStyle">@style/ButtonMyTheme</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonMyTheme</item>
+
+    <item name="android:spinnerStyle">@style/SpinnerMyTheme</item>
+
+    <item name="android:dropDownSpinnerStyle">@style/SpinnerMyTheme.DropDown</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemMyTheme</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarMyTheme</item>
+
+  </style>
+
+</resources>
