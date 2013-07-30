@@ -41,6 +41,8 @@ public class AddListActivity extends Activity {
     	Intent intent = getIntent();
         detailName.setText(intent.getStringExtra("name"));
         detailDesciption.setText(intent.getStringExtra("desciption"));
+        
+        
     }
     
     

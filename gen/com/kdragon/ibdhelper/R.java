@@ -272,6 +272,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int loginPassword=0x7f060008;
         public static final int loginPopup=0x7f060006;
         public static final int loginUsername=0x7f060007;
+        public static final int mainFragment=0x7f060005;
         public static final int margin=0x7f060002;
         public static final int medDescription=0x7f060016;
         public static final int medListView=0x7f06003c;
@@ -283,7 +284,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int newsButton=0x7f060013;
         public static final int okCancelBar=0x7f060046;
         public static final int orrequired1=0x7f060041;
-        public static final int pager=0x7f060005;
         public static final int password1=0x7f060043;
         public static final int password2=0x7f060044;
         public static final int progressBar1=0x7f060039;
