@@ -5,18 +5,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import org.json.JSONObject;
-
 import com.kdragon.other.ScheduleClient;
-import com.parse.ParseAnonymousUtils;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
-
-import de.keyboardsurfer.android.widget.crouton.Crouton;
-import de.keyboardsurfer.android.widget.crouton.Style;
-
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -29,8 +21,6 @@ import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +32,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.TimePicker;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -212,6 +201,8 @@ public class MyMedFragment extends Fragment{
  
         @Override
         protected void onPostExecute(Void result) {
+        	
+		    
             // Locate the listview in listview_main.xml
             listview = (ListView) getActivity().findViewById(R.id.medListView);
             // Pass the results into an ArrayAdapter

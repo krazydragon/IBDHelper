@@ -5,7 +5,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import com.kdragon.ibdhelper.MyMedFragment.RemoteDataTask;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -28,35 +27,106 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.AdapterView.OnItemClickListener;
 
 
 
-public class MyAppointmentsFragment extends Fragment{
+public class MyAppointmentsFragment extends Fragment {
 	
 	ViewPager mViewPager;
-	ListView listview;
+	ListView todayListview;
+	ListView tomorrowListview;
+	ListView yesterdayListview;
     List<ParseObject> ob;
     ProgressDialog mProgressDialog;
-    ArrayAdapter<String> adapter;
+    ArrayAdapter<String> todayAdapter;
+    ArrayAdapter<String> futureAdapter;
+    ArrayAdapter<String> pastAdapter;
 	
 	private EditText _appName;
 	private EditText _appDesciption;
 	private EditText _appLocation;
 	private TimePicker timePicker;
 	private DatePicker datePicker;
+	Calendar c;
+	Date today;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		super.onCreateView(inflater, container, savedInstanceState);
 		
 		LinearLayout view = (LinearLayout) inflater.inflate(R.layout.fragment_appointments, container, false);
+		todayListview = (ListView) getActivity().findViewById(R.id.appTodayListView);
+		tomorrowListview = (ListView) getActivity().findViewById(R.id.appFutureListView);
+		yesterdayListview = (ListView) getActivity().findViewById(R.id.appPastListView);
+		TextView todayView = (TextView)view.findViewById(R.id.appTodaytext);
+		TextView futureView = (TextView)view.findViewById(R.id.appFutureText);
+		TextView pastView = (TextView)view.findViewById(R.id.appPastText);
+		c = Calendar.getInstance();
+		 // set the calendar to start of today
+	    c.set(Calendar.HOUR_OF_DAY, 0);
+	    c.set(Calendar.MINUTE, 0);
+	    c.set(Calendar.SECOND, 0);
+	    c.set(Calendar.MILLISECOND, 0);
+
+	    today = c.getTime();
+		todayView.setOnClickListener(new Button.OnClickListener(){
+
+        	@Override
+        	public void onClick(View v) {
+        		// TODO Auto-generated method stub
+        		if(todayListview.getVisibility() == View.VISIBLE)
+        			todayListview.setVisibility(View.GONE);
+                else
+                	todayListview.setVisibility(View.VISIBLE);
+        		
+        		
+ 
+        	}
+        	}
+        );
+		
+		futureView.setOnClickListener(new Button.OnClickListener(){
+
+        	@Override
+        	public void onClick(View v) {
+        		// TODO Auto-generated method stub
+        		if(tomorrowListview.getVisibility() == View.VISIBLE)
+        			tomorrowListview.setVisibility(View.GONE);
+                else
+                	tomorrowListview.setVisibility(View.VISIBLE);
+        		
+        		
+ 
+        	}
+        	}
+        );
+		
+		pastView.setOnClickListener(new Button.OnClickListener(){
+
+        	@Override
+        	public void onClick(View v) {
+        		// TODO Auto-generated method stub
+        		if(yesterdayListview.getVisibility() == View.VISIBLE)
+        			yesterdayListview.setVisibility(View.GONE);
+                else
+                	yesterdayListview.setVisibility(View.VISIBLE);
+        		
+        		
+ 
+        	}
+        	}
+        );
+        
+        
+        
+	
 		
 		
 		new RemoteDataTask().execute();
@@ -120,7 +190,7 @@ public class MyAppointmentsFragment extends Fragment{
         		int hour = timePicker.getCurrentHour();
         		int minute = timePicker.getCurrentMinute();
         		
-        		Calendar c = Calendar.getInstance();
+        		
         	    
         		c.set(Calendar.YEAR, year);
         		c.set(Calendar.MONTH, month);
@@ -177,7 +247,7 @@ public class MyAppointmentsFragment extends Fragment{
             // Locate the class table named "Country" in Parse.com
             ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
                     "appointment");
-            query.addAscendingOrder("appDate");
+            query.orderByDescending("appDate");
             try {
                 ob = query.find();
             } catch (ParseException e) {
@@ -189,20 +259,51 @@ public class MyAppointmentsFragment extends Fragment{
  
         @Override
         protected void onPostExecute(Void result) {
+        	
+        	
+
+		   
             // Locate the listview in listview_main.xml
-            listview = (ListView) getActivity().findViewById(R.id.appListView);
+        	todayListview = (ListView) getActivity().findViewById(R.id.appTodayListView);
+        	tomorrowListview = (ListView) getActivity().findViewById(R.id.appFutureListView);
+    		yesterdayListview = (ListView) getActivity().findViewById(R.id.appPastListView);
             // Pass the results into an ArrayAdapter
-            adapter = new ArrayAdapter<String>(getActivity(), R.layout.listview_item);
+            todayAdapter = new ArrayAdapter<String>(getActivity(), R.layout.listview_item);
+            futureAdapter = new ArrayAdapter<String>(getActivity(), R.layout.listview_item);
+            pastAdapter = new ArrayAdapter<String>(getActivity(), R.layout.listview_item);
             // Retrieve object "name" from Parse.com database
-            for (ParseObject med : ob) {
-                adapter.add((String) med.get("appName"));
+            for (ParseObject app : ob) {
+            	Date appDate = app.getDate("appTime");
+        		c.setTime(appDate);
+        		c.set(Calendar.HOUR_OF_DAY, 0);
+    		    c.set(Calendar.MINUTE, 0);
+    		    c.set(Calendar.SECOND, 0);
+    		    c.set(Calendar.MILLISECOND, 0);
+    		    // and get that as a Date
+    		    Date dateSpecified = c.getTime();
+        		
+        		 if (dateSpecified.before(today)) {
+        			 pastAdapter.add((String) app.get("appName"));
+     		       
+     		    } else if (dateSpecified.equals(today)) {
+     		    	todayAdapter.add((String) app.get("appName"));
+     		        
+     		    } 
+     		             else if (dateSpecified.after(today)) {
+     		            	futureAdapter.add((String) app.get("appName"));
+     		            	 
+     		        
+     		    }
+        		 
             }
             // Binds the Adapter to the ListView
-            listview.setAdapter(adapter);
+            todayListview.setAdapter(todayAdapter);
+            tomorrowListview.setAdapter(pastAdapter);
+            yesterdayListview.setAdapter(futureAdapter);
             // Close the progressdialog
             mProgressDialog.dismiss();
             // Capture button clicks on ListView items
-            listview.setOnItemClickListener(new OnItemClickListener() {
+            todayListview.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view,
                         int position, long id) {
@@ -218,6 +319,8 @@ public class MyAppointmentsFragment extends Fragment{
             });
         }
     }
+
+	
 	
 
     
