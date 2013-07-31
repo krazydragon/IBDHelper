@@ -181,19 +181,22 @@ public class IBDHelperMainActivity extends Activity{
 	            Fragment frag = null;
 	            switch (position) {
 	            case 1:
-	                frag = new MyDayFragment();
-	                break;
-
-	            case 2:
 	                frag = new MyMedFragment();
 	                break;
 
-	            case 3:
+	            case 2:
 	                frag = new MyFoodFragment();
 	                break;
 
-	            default:
+	            case 3:
 	                frag = new MyAppointmentsFragment();
+	                break;
+
+	            case 4:
+	                frag = new MySymptomsFragment();
+	                break;
+	            default:
+	                frag = new MyDayFragment();
 	                break;
 	            }
 	            transaction.replace(R.id.mainFragment, frag);
@@ -216,13 +219,6 @@ public class IBDHelperMainActivity extends Activity{
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
 		switch(item.getItemId()) {
-		case R.id.menu_add:
-			
-			
-			/*Intent addIntent = new Intent(this, AddListActivity.class);
-			
-			startActivity(addIntent);*/
-			return true;
 		case R.id.action_settings:
 	        
 			Intent settingsIntent = new Intent(this, SettingsActivity.class);
@@ -289,7 +285,7 @@ public class IBDHelperMainActivity extends Activity{
 				     tabLayout = R.layout.fragment_appointments;
 				        break;
 				 case 4:
-					 tabLayout = R.layout.fragment_symtoms;
+					 tabLayout = R.layout.fragment_symptoms;
 					 break;
 			}
 			View rootView = inflater.inflate(tabLayout,
@@ -327,5 +323,6 @@ public class IBDHelperMainActivity extends Activity{
 		}
 	
 
+	
 	
 }

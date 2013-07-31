@@ -51,4 +51,6 @@
         <string name="Please">Please add Information</string>
         <string name="app_id ">379523005483259</string>
         <string name="cancel">Cancel</string>
+        <string name="flareText">Flare-up</string>
+        <string name="bmText">BM</string>
 </resources>

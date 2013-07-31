@@ -5,14 +5,13 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:id="@+id/MedicineAddLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" 
          android:background="#000000">
 
         <EditText
-            android:id="@+id/medName"
+            android:id="@+id/nameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -22,7 +21,7 @@
         </EditText>
 
         <EditText
-            android:id="@+id/medDescription"
+            android:id="@+id/descriptionInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -48,7 +47,7 @@
             android:visibility="gone" >
 
             <TimePicker
-                android:id="@+id/timePicker1"
+                android:id="@+id/timePicker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />

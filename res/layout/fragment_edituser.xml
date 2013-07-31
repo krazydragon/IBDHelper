@@ -5,7 +5,7 @@
     android:layout_height="match_parent" >
 
     <ScrollView
-        android:id="@+id/ScrollView1"
+        android:id="@+id/AppointmentAddLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
@@ -33,7 +33,7 @@
             </EditText>
 
             <EditText
-                android:id="@+id/medDescription"
+                android:id="@+id/descriptionInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -89,7 +89,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/medName"
+                        android:id="@+id/nameInput"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3.56"

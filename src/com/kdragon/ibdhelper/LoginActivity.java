@@ -136,12 +136,12 @@ public class LoginActivity extends Activity implements OnClickListener{
 			_regForm = new Form();
 			
 			_regUserInput = (EditText)findViewById(R.id.regUsername);
-			_regPassInput = (EditText)findViewById(R.id.medDescription);
+			_regPassInput = (EditText)findViewById(R.id.descriptionInput);
 			EditText regRePassInput = (EditText)findViewById(R.id.regRePassword);
 			_regEmailInput = (EditText)findViewById(R.id.regEmail);
 			_regFNameInput = (EditText)findViewById(R.id.regFirstName);
 			_regLNameInput = (EditText)findViewById(R.id.regLastName);
-			_regWeightInput = (EditText)findViewById(R.id.medName);
+			_regWeightInput = (EditText)findViewById(R.id.nameInput);
 			
 			_regEmailInput.setText(EmailRetriever.getEmail(this));
 			

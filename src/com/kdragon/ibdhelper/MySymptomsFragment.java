@@ -1,5 +1,10 @@
 package com.kdragon.ibdhelper;
 
+import java.util.Calendar;
+
+import com.kdragon.ibdhelper.MyMedFragment.RemoteDataTask;
+import com.kdragon.other.ScheduleClient;
+import com.parse.ParseObject;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -12,18 +17,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.TimePicker;
 
 
 
-public class MyFoodFragment extends Fragment{
+public class MySymptomsFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		super.onCreateView(inflater, container, savedInstanceState);
 		
-		LinearLayout view = (LinearLayout) inflater.inflate(R.layout.fragment_foods, container, false);
+		LinearLayout view = (LinearLayout) inflater.inflate(R.layout.fragment_symptoms, container, false);
 		
 		
 		setHasOptionsMenu(true);
@@ -46,7 +54,7 @@ public class MyFoodFragment extends Fragment{
 	private void addPopup(){
 		final PopupWindow pw;
 		//We need to get the instance of the LayoutInflater, use the context of this activity
-        LayoutInflater inflater = (LayoutInflater) MyFoodFragment.this
+        LayoutInflater inflater = (LayoutInflater) MySymptomsFragment.this
                 .getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //Inflate the view from a predefined XML layout
         View layout = inflater.inflate(R.layout.fragment_add_bm,
@@ -94,4 +102,5 @@ public class MyFoodFragment extends Fragment{
         
         
 	}
+
 }

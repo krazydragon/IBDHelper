@@ -56,8 +56,8 @@ public class AddDetailActivity extends Activity{
 		}else{
 			setContentView(R.layout.fragment_add_med);	
 			
-			_medName = (EditText)findViewById(R.id.medName);
-			_medDesciption = (EditText)findViewById(R.id.medDescription);
+			_medName = (EditText)findViewById(R.id.nameInput);
+			_medDesciption = (EditText)findViewById(R.id.descriptionInput);
 			_medCheckbox = (CheckBox)findViewById(R.id.MedCheckBox);
 			
 			// Create a new service client and bind our activity to this service
