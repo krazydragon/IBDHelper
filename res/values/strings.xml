@@ -54,4 +54,13 @@
         <string name="flareText">Flare-up</string>
         <string name="bmText">BM</string>
         <string name="today">Today</string>
+        <string name="flareups">Flare-Ups</string>
+        <string name="numberOfFlares">Number of Flares</string>
+        <string name="painLevel">Pain Level</string>
+        <string name="zero">0</string>
+        <string name="newWater">Water Amount</string>
+        <string name="cups">Cups Today</string>
+        <string name="numCups">Number of Cups</string>
+        <string name="BMs">BM\'s</string>
+        <string name="numOfBm">Number of BM\'s</string>
 </resources>

@@ -5,12 +5,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import com.kdragon.ibdhelper.MyMedFragment.RemoteDataTask;
-import com.kdragon.other.ScheduleClient;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -25,31 +24,189 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
-import android.widget.TimePicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 
 public class MySymptomsFragment extends Fragment{
 	
+	int flareCount = 0;
+	int flareListNum = 0;
+	int bmCount = 0;
+	int bmListNum = 0;
 	int flarePainValue = 0;
 	int bmPainValue = 0;
 	CheckBox _flareCheckbox;
 	CheckBox _bmCheckbox;
 	Date today;
 	Calendar c;
+	List<ParseObject> flareList;
+	TextView flareDate;
+	TextView flareNumber;
+	TextView flarePain;
+	List<ParseObject> bmList;
+	TextView bmDate;
+	TextView bmNumber;
+	TextView bmPain;
+	ParseObject bmObj; 
+	ParseObject flareObj;
+	int bmNewPainValue = 5;
+	int flareNewPainValue = 5;
+	ImageButton flareBack;
+	ImageButton flareFoward;
+	ImageButton bmBack;
+	ImageButton bmFoward;
+	PopupWindow pw;
+	
+
+	
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		super.onCreateView(inflater, container, savedInstanceState);
 		
 		LinearLayout view = (LinearLayout) inflater.inflate(R.layout.fragment_symptoms, container, false);
+		
+		
+		flareBack = (ImageButton)view.findViewById(R.id.imageButton1);
+		flareFoward = (ImageButton)view.findViewById(R.id.imageButton2);
+		
+		bmBack = (ImageButton)view.findViewById(R.id.bmImageButton1);
+		bmFoward = (ImageButton)view.findViewById(R.id.bmIageButton2);
+		
+		flareDate = (TextView)view.findViewById(R.id.flareDateView);
+		flareNumber = (TextView)view.findViewById(R.id.flareNumberText);
+		flarePain = (TextView)view.findViewById(R.id.flarePainText);
+		
+		bmDate = (TextView)view.findViewById(R.id.bmDateView);
+		bmNumber = (TextView)view.findViewById(R.id.bmNumberText);
+		bmPain = (TextView)view.findViewById(R.id.bmPainText);
+		
+		flareBack.setOnClickListener(new Button.OnClickListener(){
+
+        	@Override
+        	public void onClick(View v) {
+        		// TODO Auto-generated method stub
+
+        		if(flareListNum < flareList.size()){
+        			
+        			flareListNum ++;
+        			
+        			flareFoward.setVisibility(View.VISIBLE);
+        			
+        				
+        				if(flareListNum == (flareList.size() - 1)){
+            				flareBack.setVisibility(View.INVISIBLE);
+            			}
+            				flareDate.setText(flareList.get(flareListNum).getCreatedAt().toString());
+            				flareNumber.setText(Integer.toString(flareList.get(flareListNum).getInt("size")));
+            				flarePain.setText(Integer.toString(getPain(flareList.get(flareListNum).getInt("size"), flareList.get(flareListNum).getInt("pain"))));
+            			
+        	
+        		}
+        		
+ 
+        	}
+        	}
+        );
+		
+		flareFoward.setOnClickListener(new Button.OnClickListener(){
+
+        	@Override
+        	public void onClick(View v) {
+        		// TODO Auto-generated method stub
+
+        		if(flareListNum > 0){
+        			flareBack.setVisibility(View.VISIBLE);
+        			flareListNum --;
+        			
+        			
+        			
+        				flareDate.setText(flareList.get(flareListNum).getDate("date").toString());
+        				if(flareListNum == 0){
+            				flareFoward.setVisibility(View.INVISIBLE);
+            			}
+            				flareDate.setText(flareList.get(flareListNum).getCreatedAt().toString());
+            				flareNumber.setText(Integer.toString(flareList.get(flareListNum).getInt("size")));
+            				flarePain.setText(Integer.toString(getPain(flareList.get(flareListNum).getInt("size"), flareList.get(flareListNum).getInt("pain"))));
+            			
+        			
+        			
+        			
+        			
+        			
+        		}
+        		
+ 
+        	}
+        	}
+        );
+		
+		bmBack.setOnClickListener(new Button.OnClickListener(){
+
+        	@Override
+        	public void onClick(View v) {
+        		// TODO Auto-generated method stub
+
+        		if(bmListNum < bmList.size()){
+        			
+        			bmListNum ++;
+        			
+        			bmFoward.setVisibility(View.VISIBLE);
+        			
+        				
+        				if(bmListNum == (bmList.size() - 1)){
+            				bmBack.setVisibility(View.INVISIBLE);
+            			}
+            				bmDate.setText(bmList.get(bmListNum).getCreatedAt().toString());
+            				bmNumber.setText(Integer.toString(bmList.get(bmListNum).getInt("size")));
+            				bmPain.setText(Integer.toString(getPain(bmList.get(bmListNum).getInt("size"), bmList.get(bmListNum).getInt("pain"))));
+            			
+        	
+        		}
+        		
+ 
+        	}
+        	}
+        );
+		
+		bmFoward.setOnClickListener(new Button.OnClickListener(){
+
+        	@Override
+        	public void onClick(View v) {
+        		// TODO Auto-generated method stub
+
+        		if(bmListNum > 0){
+        			bmBack.setVisibility(View.VISIBLE);
+        			bmListNum --;
+        			
+        			
+        			
+        				bmDate.setText(bmList.get(bmListNum).getDate("date").toString());
+        				if(bmListNum == 0){
+            				bmFoward.setVisibility(View.INVISIBLE);
+            			}
+            				bmDate.setText(flareList.get(bmListNum).getCreatedAt().toString());
+            				bmNumber.setText(Integer.toString(bmList.get(bmListNum).getInt("size")));
+            				bmPain.setText(Integer.toString(getPain(bmList.get(bmListNum).getInt("size"), bmList.get(bmListNum).getInt("pain"))));
+            			
+        			
+        			
+        			
+        			
+        			
+        		}
+        		
+ 
+        	}
+        	}
+        );
 		 c = Calendar.getInstance();
 
 		    // set the calendar to start of today
@@ -59,46 +216,15 @@ public class MySymptomsFragment extends Fragment{
 		    c.set(Calendar.MILLISECOND, 0);
 
 		    today = c.getTime();
-		    
+		    bmObj = null;
 
-		    
+		    flareDate.setText(today.toString());
+		    flareQuery();
+		    bmQuery();
 
 		    // test your condition
 		    
-		ParseQuery<ParseObject> query = ParseQuery.getQuery("bm");
-		query.findInBackground(new FindCallback<ParseObject>() {
-		    public void done(List<ParseObject> scoreList, ParseException e) {
-		        if (e == null) {
-		        	
-		        	for (ParseObject med : scoreList) {
-		        		Date createdAt = med.getDate("date");
-		        		c.setTime(createdAt);
-		        		c.set(Calendar.HOUR_OF_DAY, 0);
-		    		    c.set(Calendar.MINUTE, 0);
-		    		    c.set(Calendar.SECOND, 0);
-		    		    c.set(Calendar.MILLISECOND, 0);
-		    		    // and get that as a Date
-		    		    Date dateSpecified = c.getTime();
-		        		
-		        		 if (dateSpecified.before(today)) {
-
-		     		        Log.i(" date is previou", createdAt.toString());
-		     		    } else if (dateSpecified.equals(today)) {
-
-		     		        Log.i(" date is today ", createdAt.toString());
-		     		    } 
-		     		             else if (dateSpecified.after(today)) {
-
-		     		        Log.i(" date is future date ", createdAt.toString());
-		     		    }
-		            }
-		        	
-		            Log.d("score", "Retrieved " + scoreList.size() + " scores");
-		        } else {
-		            Log.d("score", "Error: " + e.getMessage());
-		        }
-		    }
-		});
+		
 		setHasOptionsMenu(true);
 		return view;
 	}
@@ -117,7 +243,17 @@ public class MySymptomsFragment extends Fragment{
 	}
 	
 	private void addPopup(){
-		final PopupWindow pw;
+		
+		if(bmObj == null){
+			bmObj = new ParseObject("bm");
+			bmObj.put("pain", bmPainValue);
+			bmObj.put("size", 0);
+		}
+		if(flareObj == null){
+			flareObj = new ParseObject("flare");
+			flareObj.put("pain", flarePainValue);
+			flareObj.put("size", 0);
+		}
 		//We need to get the instance of the LayoutInflater, use the context of this activity
         LayoutInflater inflater = (LayoutInflater) MySymptomsFragment.this
                 .getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -154,7 +290,7 @@ public class MySymptomsFragment extends Fragment{
             }
  
             public void onStopTrackingTouch(SeekBar seekBar) {
-            	flarePainValue = progressChanged;
+            	flareNewPainValue = progressChanged;
             }
         });
         
@@ -170,7 +306,7 @@ public class MySymptomsFragment extends Fragment{
             }
  
             public void onStopTrackingTouch(SeekBar seekBar) {
-            	bmPainValue = progressChanged;
+            	bmNewPainValue = progressChanged;
             }
         });
  
@@ -184,17 +320,30 @@ public class MySymptomsFragment extends Fragment{
         		
         		
         		if (_flareCheckbox.isChecked()) {
-        			ParseObject flareObj = new ParseObject("flare");
-        			flareObj.put("pain", flarePainValue);
+        			
+        			flareObj.increment("size");
+        			flareObj.increment("pain", flareNewPainValue);
         			flareObj.saveEventually();
+        			flareCount++;
+        			flarePainValue = flarePainValue + flareNewPainValue;
+        			flareNumber.setText(Integer.toString(flareCount));
+    				flarePain.setText(Integer.toString(getPain(flareCount, flarePainValue)));
         			
         		}
         		if (_bmCheckbox.isChecked()) {
-        			ParseObject bmObj = new ParseObject("bm");
-        			bmObj.put("pain", bmPainValue);
-        			bmObj.saveInBackground();
+        			bmObj.increment("size");
+        			bmObj.increment("pain", bmNewPainValue);
+        			bmObj.saveEventually();
+        			bmCount++;
+        			bmPainValue = bmPainValue + bmNewPainValue;
+        			bmNumber.setText(Integer.toString(bmCount));
+    				bmPain.setText(Integer.toString(getPain(bmCount, bmPainValue)));
+        			
+        			
         		}
+        		
         		pw.dismiss();
+        		
         		
         	}
         	}
@@ -215,7 +364,97 @@ public class MySymptomsFragment extends Fragment{
         
         
 	}
+	private int getPain(int size, int total){
+		int painLevel = total/size;
+		return painLevel;
+	}
 	
-	
+	public void flareQuery(){
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("flare");
+		query.findInBackground(new FindCallback<ParseObject>() {
+		    public void done(List<ParseObject> flareDays, ParseException e) {
+		        if (e == null) {
+		        	Log.i("", Integer.toString(flareDays.size()));
+		        	for (ParseObject flare : flareDays) {
+		        		Date createdAt = flare.getCreatedAt();
+		        		c.setTime(createdAt);
+		        		c.set(Calendar.HOUR_OF_DAY, 0);
+		    		    c.set(Calendar.MINUTE, 0);
+		    		    c.set(Calendar.SECOND, 0);
+		    		    c.set(Calendar.MILLISECOND, 0);
+		    		    // and get that as a Date
+		    		    Date dateSpecified = c.getTime();
+		        		
+		        		 if (dateSpecified.equals(today)) {
 
+		        			 flareObj = flare;
+		        			flarePainValue = flareObj.getInt("pain");
+		        			flareCount = flareObj.getInt("size");
+		        			flareNumber.setText(Integer.toString(flareCount));
+				        	flarePain.setText(Integer.toString(getPain(flareCount, flarePainValue)));
+		        			
+		     		        
+		     		    }else if (dateSpecified.before(today)&&(flareObj != null)) {
+		     		    	flareBack.setVisibility(View.VISIBLE);
+		        		 
+		            }
+		        	
+
+
+		        	flareList = flareDays;
+		        	flareDate.setText(flareList.get(flareListNum).getCreatedAt().toString());
+		        	
+		        	
+		        }}
+		        
+		    }
+		});
+		
+		
+	}
+	
+	public void bmQuery(){
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("bm");
+		query.findInBackground(new FindCallback<ParseObject>() {
+		    public void done(List<ParseObject> bmDays, ParseException e) {
+		        if (e == null) {
+		        	Log.i("", Integer.toString(bmDays.size()));
+		        	for (ParseObject bm : bmDays) {
+		        		Date createdAt = bm.getCreatedAt();
+		        		c.setTime(createdAt);
+		        		c.set(Calendar.HOUR_OF_DAY, 0);
+		    		    c.set(Calendar.MINUTE, 0);
+		    		    c.set(Calendar.SECOND, 0);
+		    		    c.set(Calendar.MILLISECOND, 0);
+		    		    // and get that as a Date
+		    		    Date dateSpecified = c.getTime();
+		        		
+		        		 if (dateSpecified.equals(today)) {
+
+		        			 bmObj = bm;
+		        			bmPainValue = bmObj.getInt("pain");
+		        			bmCount = bmObj.getInt("size");
+		        			bmNumber.setText(Integer.toString(bmCount));
+				        	bmPain.setText(Integer.toString(getPain(bmCount, bmPainValue)));
+		        			
+		     		        
+		     		    }else if (dateSpecified.before(today)&&(bmObj != null)) {
+		     		    	bmBack.setVisibility(View.VISIBLE);
+		        		 
+		            }
+		        	
+
+
+		        	bmList = bmDays;
+		        	bmDate.setText(bmList.get(bmListNum).getCreatedAt().toString());
+		        	
+		        	
+		        }}
+		        
+		    }
+		});
+		
+		
+	}
+	
 }
