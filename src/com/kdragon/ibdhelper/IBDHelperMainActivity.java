@@ -9,58 +9,27 @@
  */
 package com.kdragon.ibdhelper;
 
-import java.util.Calendar;
-import java.util.List;
-import java.util.Locale;
-
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Point;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.Display;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.TextView;
-import android.widget.TimePicker;
-
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-import com.kdragon.ibdhelper.MyMedFragment.RemoteDataTask;
-import com.kdragon.other.ScheduleClient;
-import com.parse.FindCallback;
-import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseAnalytics;
 import com.parse.ParseAnonymousUtils;
-import com.parse.ParseException;
-import com.parse.ParseFacebookUtils;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseTwitterUtils;
 import com.parse.ParseUser;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -96,11 +65,16 @@ public class IBDHelperMainActivity extends Activity{
 		ParseACL.setDefaultACL(defaultACL, true);
 		
 		
-		
+		FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        
+        
+        
 		ParseUser currentUser = ParseUser.getCurrentUser();
 		if (currentUser != null) {
 			Crouton.makeText(this, "found!", Style.ALERT).show();
-			
+			transaction.replace(R.id.mainFragment,new MyDayFragment() );
+			transaction.commit();
 			//new RemoteDataTask().execute();
 			
 		} else {

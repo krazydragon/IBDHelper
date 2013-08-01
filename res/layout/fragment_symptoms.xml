@@ -12,7 +12,8 @@
 
         <TextView
             android:id="@+id/Flare"
-            android:layout_width="wrap_content"
+            style="@style/myheader"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
@@ -80,6 +81,7 @@
             android:layout_width="158dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:paddingBottom="30dp"
             android:paddingLeft="50dp"
             android:text="@string/zero"
             android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -102,7 +104,8 @@
 
         <TextView
             android:id="@+id/BM"
-            android:layout_width="wrap_content"
+            style="@style/myheader"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"

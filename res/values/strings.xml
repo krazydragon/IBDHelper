@@ -63,4 +63,14 @@
         <string name="numCups">Number of Cups</string>
         <string name="BMs">BM\'s</string>
         <string name="numOfBm">Number of BM\'s</string>
+        <string name="future">Future</string>
+        <string name="past">Past</string>
+        <string name="howMuchWater">How much water?</string>
+        <string name="oz">oz</string>
+        <string name="Sorry">Page can not be loaded there is no internet connection</string>
+        <string name="Symptoms">Symptoms</string>
+        <string name="Appointments">Appointments</string>
+        <string name="Water">Water</string>
+        <string name="mumOf">Number of appoinments today.</string>
+        <string name="cup">Cups</string>
 </resources>

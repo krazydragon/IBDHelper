@@ -6,9 +6,13 @@ import java.util.Date;
 import java.util.List;
 
 import com.kdragon.other.ScheduleClient;
+import com.kdragon.other.WebInterface;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -54,13 +58,19 @@ public class MyMedFragment extends Fragment{
     private TimePicker picker;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+		Boolean connected = WebInterface.getConnectionStatus(getActivity());
+		
 		super.onCreateView(inflater, container, savedInstanceState);
 		
 		LinearLayout view = (LinearLayout) inflater.inflate(R.layout.fragment_meds, container, false);
 		
 		setHasOptionsMenu(true);
+		if(!connected){
+			Crouton.makeText(getActivity(), "No network found information can not load!", Style.ALERT).show();
+		}else{
+			new RemoteDataTask().execute();
+		}
 		
-		new RemoteDataTask().execute();
 		return view;
 	}
 	

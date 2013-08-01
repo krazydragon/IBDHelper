@@ -9,7 +9,7 @@
         android:id="@+id/mainFragment"
         android:layout_width="0dip"
         android:layout_height="match_parent"
-        class="com.kdragon.ibdhelper.MyDayFragment" 
+        class="com.kdragon.ibdhelper.BlankFrag" 
         android:layout_weight="1" >
     </fragment>
 

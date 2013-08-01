@@ -5,10 +5,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import com.kdragon.other.WebInterface;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -23,6 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -36,14 +41,14 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 public class MyFoodFragment extends Fragment{
 	int waterCount = 0;
 	int waterListNum = 0;
-	int waterPainValue = 0;
+	int waterAmountValue = 0;
 	Date today;
 	Calendar c;
 	List<ParseObject> waterList;
 	TextView waterDate;
 	TextView waterPain;
 	ParseObject waterObj;
-	int waterNewPainValue = 5;
+	int waterNewAmountValue = 5;
 	ImageButton waterBack;
 	ImageButton waterFoward;
 	PopupWindow pw;
@@ -57,6 +62,11 @@ public class MyFoodFragment extends Fragment{
 		
 		LinearLayout view = (LinearLayout) inflater.inflate(R.layout.fragment_foods, container, false);
 		
+		
+		Boolean connected = WebInterface.getConnectionStatus(getActivity());
+		if(!connected){
+			Crouton.makeText(getActivity(), "No network found some values may be overwritten!", Style.ALERT).show();
+ 		}
 		
 		waterBack = (ImageButton)view.findViewById(R.id.imageButton1);
 		waterFoward = (ImageButton)view.findViewById(R.id.imageButton2);
@@ -161,15 +171,15 @@ public class MyFoodFragment extends Fragment{
 		
 		if(waterObj == null){
 			waterObj = new ParseObject("water");
-			waterObj.put("amount", waterPainValue);
+			waterObj.put("amount", waterAmountValue);
 			waterObj.put("size", 0);
 		}
 		//We need to get the instance of the LayoutInflater, use the context of this activity
         LayoutInflater inflater = (LayoutInflater) MyFoodFragment.this
                 .getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //Inflate the view from a predefined XML layout
-        View layout = inflater.inflate(R.layout.fragment_add_bm,
-                (ViewGroup) getActivity().findViewById(R.id.SymptomAddLayout));
+        View layout = inflater.inflate(R.layout.fragment_add_food,
+                (ViewGroup) getActivity().findViewById(R.id.FoodAddLayout));
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -182,29 +192,8 @@ public class MyFoodFragment extends Fragment{
         
         Button submit = (Button)layout.findViewById(R.id.addButton);
         Button cancel =(Button)layout.findViewById(R.id.cancelButton);
-        SeekBar flareControl = (SeekBar) layout.findViewById(R.id.seekBar2);
-        SeekBar bmControl = (SeekBar) layout.findViewById(R.id.SeekBar01);
-        
-        
-        
-        flareControl.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-        	int progressChanged;
- 
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-                progressChanged = progress;
-            }
- 
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
- 
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            	waterNewPainValue = progressChanged;
-            }
-        });
-        
- 
-        
+        final EditText waterInput = (EditText) layout.findViewById(R.id.waterText1);
+
         
         submit.setOnClickListener(new Button.OnClickListener(){
 
@@ -212,15 +201,12 @@ public class MyFoodFragment extends Fragment{
         	public void onClick(View v) {
         		// TODO Auto-generated method stub
         		
-        		
-        		
-        			
-        		waterObj.increment("size");
-        		waterObj.increment("amount", waterNewPainValue);
+        		waterObj.increment("amount", waterNewAmountValue);
         		waterObj.saveEventually();
         			waterCount++;
-        			waterPainValue = waterPainValue + waterNewPainValue;
-        			waterPain.setText(Integer.toString(getPain(waterCount, waterPainValue)));
+        			waterNewAmountValue = Integer.parseInt(waterInput.getText().toString());
+        			waterAmountValue = waterAmountValue + waterNewAmountValue;
+        			waterPain.setText(Integer.toString(getPain(waterCount, waterAmountValue)));
         			
         		
         		
@@ -256,7 +242,7 @@ public class MyFoodFragment extends Fragment{
 		query.findInBackground(new FindCallback<ParseObject>() {
 		    public void done(List<ParseObject> flareDays, ParseException e) {
 		        if (e == null) {
-		        	Log.i("", Integer.toString(flareDays.size()));
+		        	
 		        	for (ParseObject water : flareDays) {
 		        		Date createdAt = water.getCreatedAt();
 		        		c.setTime(createdAt);
@@ -270,9 +256,9 @@ public class MyFoodFragment extends Fragment{
 		        		 if (dateSpecified.equals(today)) {
 
 		        			 waterObj = water;
-		        			waterPainValue = waterObj.getInt("amount");
+		        			waterAmountValue = waterObj.getInt("amount");
 		        			waterCount = waterObj.getInt("size");
-				        	waterPain.setText(Integer.toString(getPain(waterCount, waterPainValue)));
+				        	waterPain.setText(Integer.toString(getPain(waterCount, waterAmountValue)));
 		        			
 		     		        
 		     		    }else if (dateSpecified.before(today)&&(waterObj != null)) {

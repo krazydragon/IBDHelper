@@ -5,9 +5,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import com.kdragon.ibdhelper.MyMedFragment.RemoteDataTask;
+import com.kdragon.other.WebInterface;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
@@ -46,7 +51,7 @@ public class MyAppointmentsFragment extends Fragment {
 	ListView yesterdayListview;
     List<ParseObject> ob;
     ProgressDialog mProgressDialog;
-    ArrayAdapter<String> todayAdapter;
+    ArrayAdapter<String> todayAdapter ;
     ArrayAdapter<String> futureAdapter;
     ArrayAdapter<String> pastAdapter;
 	
@@ -92,45 +97,52 @@ public class MyAppointmentsFragment extends Fragment {
         	}
         );
 		
-		futureView.setOnClickListener(new Button.OnClickListener(){
-
-        	@Override
-        	public void onClick(View v) {
-        		// TODO Auto-generated method stub
-        		if(tomorrowListview.getVisibility() == View.VISIBLE)
-        			tomorrowListview.setVisibility(View.GONE);
-                else
-                	tomorrowListview.setVisibility(View.VISIBLE);
-        		
-        		
- 
-        	}
-        	}
-        );
 		
-		pastView.setOnClickListener(new Button.OnClickListener(){
-
-        	@Override
-        	public void onClick(View v) {
-        		// TODO Auto-generated method stub
-        		if(yesterdayListview.getVisibility() == View.VISIBLE)
-        			yesterdayListview.setVisibility(View.GONE);
-                else
-                	yesterdayListview.setVisibility(View.VISIBLE);
-        		
-        		
- 
-        	}
-        	}
-        );
         
         
         
 	
+		Boolean connected = WebInterface.getConnectionStatus(getActivity());
 		
-		
-		new RemoteDataTask().execute();
+		if(!connected){
+			
+			view = (LinearLayout) inflater.inflate(R.layout.noservice, container, false);
+		}else{
+			new RemoteDataTask().execute();
+			futureView.setOnClickListener(new Button.OnClickListener(){
+
+	        	@Override
+	        	public void onClick(View v) {
+	        		// TODO Auto-generated method stub
+	        		if(tomorrowListview.getVisibility() == View.VISIBLE)
+	        			tomorrowListview.setVisibility(View.GONE);
+	                else
+	                	tomorrowListview.setVisibility(View.VISIBLE);
+	        		
+	        		
+	 
+	        	}
+	        	}
+	        );
+			
+			pastView.setOnClickListener(new Button.OnClickListener(){
+
+	        	@Override
+	        	public void onClick(View v) {
+	        		// TODO Auto-generated method stub
+	        		if(yesterdayListview.getVisibility() == View.VISIBLE)
+	        			yesterdayListview.setVisibility(View.GONE);
+	                else
+	                	yesterdayListview.setVisibility(View.VISIBLE);
+	        		
+	        		
+	 
+	        	}
+	        	}
+	        );
+		}
 		setHasOptionsMenu(true);
+		
 		return view;
 	}
 
@@ -259,11 +271,7 @@ public class MyAppointmentsFragment extends Fragment {
  
         @Override
         protected void onPostExecute(Void result) {
-        	
-        	
-
-		   
-            // Locate the listview in listview_main.xml
+        	// Locate the listview in listview_main.xml
         	todayListview = (ListView) getActivity().findViewById(R.id.appTodayListView);
         	tomorrowListview = (ListView) getActivity().findViewById(R.id.appFutureListView);
     		yesterdayListview = (ListView) getActivity().findViewById(R.id.appPastListView);
@@ -271,6 +279,10 @@ public class MyAppointmentsFragment extends Fragment {
             todayAdapter = new ArrayAdapter<String>(getActivity(), R.layout.listview_item);
             futureAdapter = new ArrayAdapter<String>(getActivity(), R.layout.listview_item);
             pastAdapter = new ArrayAdapter<String>(getActivity(), R.layout.listview_item);
+        	
+
+		   
+            
             // Retrieve object "name" from Parse.com database
             for (ParseObject app : ob) {
             	Date appDate = app.getDate("appTime");
@@ -304,6 +316,34 @@ public class MyAppointmentsFragment extends Fragment {
             mProgressDialog.dismiss();
             // Capture button clicks on ListView items
             todayListview.setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,
+                        int position, long id) {
+                    // Send single item click data to SingleItemView Class
+                    Intent i = new Intent(getActivity(),
+                            AddListActivity.class);
+                   
+                    i.putExtra("name", ob.get(position).getString("appName").toString());
+                    i.putExtra("desciption", ob.get(position).getString("appDesciption").toString());
+                    // Open SingleItemView.java Activity
+                    startActivity(i);
+                }
+            });
+            tomorrowListview.setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,
+                        int position, long id) {
+                    // Send single item click data to SingleItemView Class
+                    Intent i = new Intent(getActivity(),
+                            AddListActivity.class);
+                   
+                    i.putExtra("name", ob.get(position).getString("appName").toString());
+                    i.putExtra("desciption", ob.get(position).getString("appDesciption").toString());
+                    // Open SingleItemView.java Activity
+                    startActivity(i);
+                }
+            });
+            yesterdayListview.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view,
                         int position, long id) {

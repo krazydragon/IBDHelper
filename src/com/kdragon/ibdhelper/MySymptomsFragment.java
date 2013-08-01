@@ -5,11 +5,15 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import com.kdragon.other.WebInterface;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -73,7 +77,10 @@ public class MySymptomsFragment extends Fragment{
 		
 		LinearLayout view = (LinearLayout) inflater.inflate(R.layout.fragment_symptoms, container, false);
 		
-		
+		Boolean connected = WebInterface.getConnectionStatus(getActivity());
+		if(!connected){
+			Crouton.makeText(getActivity(), "No network found some values may be overwritten!", Style.ALERT).show();
+		}
 		flareBack = (ImageButton)view.findViewById(R.id.imageButton1);
 		flareFoward = (ImageButton)view.findViewById(R.id.imageButton2);
 		
@@ -402,7 +409,7 @@ public class MySymptomsFragment extends Fragment{
 
 
 		        	flareList = flareDays;
-		        	flareDate.setText(flareList.get(flareListNum).getCreatedAt().toString());
+		        	
 		        	
 		        	
 		        }}
@@ -446,14 +453,15 @@ public class MySymptomsFragment extends Fragment{
 
 
 		        	bmList = bmDays;
-		        	bmDate.setText(bmList.get(bmListNum).getCreatedAt().toString());
+		        	
 		        	
 		        	
 		        }}
 		        
 		    }
 		});
-		
+		flareDate.setText("Today");
+		bmDate.setText("Today");
 		
 	}
 	

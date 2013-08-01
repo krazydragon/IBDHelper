@@ -140,6 +140,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          */
         public static final int viewBehind=0x7f010004;
     }
+    public static final class color {
+        /** 
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+         */
+        public static final int mypurple=0x7f090000;
+        public static final int white=0x7f090001;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -227,72 +236,73 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int textfield_focused_holo_dark=0x7f020049;
     }
     public static final class id {
-        public static final int Alarm2=0x7f06002b;
-        public static final int Alarm3=0x7f06002d;
-        public static final int Alarm4=0x7f060030;
-        public static final int AlarmLayout1=0x7f060027;
-        public static final int AlarmLayout2=0x7f06002a;
-        public static final int AlarmLayout3=0x7f06002c;
-        public static final int AlarmLayout4=0x7f06002f;
-        public static final int AlarmcheckBox=0x7f060029;
-        public static final int AppDate=0x7f060028;
+        public static final int Alarm3=0x7f060031;
+        public static final int Alarm4=0x7f060034;
+        public static final int AlarmLayout1=0x7f06002c;
+        public static final int AlarmLayout2=0x7f06002e;
+        public static final int AlarmLayout3=0x7f060030;
+        public static final int AlarmLayout4=0x7f060033;
+        public static final int AlarmcheckBox=0x7f06002d;
         public static final int AppDatePicker=0x7f060018;
         public static final int AppointmentAddLayout=0x7f060014;
-        public static final int BM=0x7f06004d;
+        public static final int BM=0x7f060054;
         public static final int Button03=0x7f06000c;
-        public static final int CheckBox02=0x7f06002e;
-        public static final int CheckBox04=0x7f060031;
-        public static final int Flare=0x7f060045;
-        public static final int FrameLayout1=0x7f06005e;
+        public static final int CheckBox02=0x7f060032;
+        public static final int CheckBox04=0x7f060035;
+        public static final int Flare=0x7f06004e;
+        public static final int FoodAddLayout=0x7f060026;
+        public static final int FrameLayout1=0x7f060065;
         public static final int LinearLayout1=0x7f060010;
-        public static final int MedCheckBox=0x7f060026;
+        public static final int MedCheckBox=0x7f06002b;
         public static final int RegisterScreenButton=0x7f06000a;
-        public static final int RelativeLayout1=0x7f060044;
+        public static final int RelativeLayout1=0x7f06004d;
         public static final int SeekBar01=0x7f060024;
-        public static final int SignupButton=0x7f060043;
+        public static final int SignupButton=0x7f06004c;
         public static final int SkipRegisterScreenButton=0x7f06000b;
         public static final int SymptomAddLayout=0x7f06001c;
         public static final int TextView01=0x7f060021;
         public static final int TextView02=0x7f060023;
-        public static final int action_settings=0x7f060064;
+        public static final int action_settings=0x7f06006b;
         public static final int addButton=0x7f06000f;
-        public static final int appFutureListView=0x7f060036;
-        public static final int appFutureText=0x7f060035;
-        public static final int appPastListView=0x7f060038;
-        public static final int appPastText=0x7f060037;
+        public static final int appFutureListView=0x7f060039;
+        public static final int appFutureText=0x7f060038;
+        public static final int appPastListView=0x7f06003b;
+        public static final int appPastText=0x7f06003a;
         public static final int appToday=0x7f06001b;
-        public static final int appTodayListView=0x7f060034;
-        public static final int appTodaytext=0x7f060033;
+        public static final int appTodayListView=0x7f060037;
+        public static final int appTodaytext=0x7f060036;
+        public static final int aptView=0x7f06003c;
         public static final int bmCheckBox=0x7f060022;
-        public static final int bmDateView=0x7f060050;
-        public static final int bmIageButton2=0x7f06004f;
-        public static final int bmImageButton1=0x7f06004e;
-        public static final int bmNumberText=0x7f060052;
-        public static final int bmPainText=0x7f060053;
-        public static final int bmTextView1=0x7f060051;
+        public static final int bmDateView=0x7f060057;
+        public static final int bmIageButton2=0x7f060056;
+        public static final int bmImageButton1=0x7f060055;
+        public static final int bmNumberText=0x7f060059;
+        public static final int bmPainText=0x7f06005a;
+        public static final int bmPainView=0x7f060042;
+        public static final int bmQtyView=0x7f060040;
+        public static final int bmTextView1=0x7f060058;
         public static final int buttonGroups=0x7f06000e;
         public static final int buttonLinks=0x7f06000d;
         public static final int cancelButton=0x7f06001a;
-        public static final int contentTextFields=0x7f060056;
+        public static final int contentTextFields=0x7f06005d;
         public static final int descriptionInput=0x7f060016;
-        public static final int detailName=0x7f06004a;
-        public static final int detailText=0x7f060041;
-        public static final int email=0x7f060059;
-        public static final int expandableListView1=0x7f06003b;
-        public static final int expandableListView2=0x7f06003a;
-        public static final int expandableListView3=0x7f060039;
+        public static final int detailName=0x7f060052;
+        public static final int detailText=0x7f06004a;
+        public static final int email=0x7f060060;
         public static final int flareCheckBox=0x7f06001e;
-        public static final int flareDateView=0x7f060048;
+        public static final int flareDateView=0x7f060051;
         public static final int flareNumberText=0x7f06001d;
-        public static final int flarePainText=0x7f060042;
+        public static final int flarePainText=0x7f06004b;
+        public static final int flarePainView=0x7f060041;
+        public static final int flareQtyView1=0x7f06003f;
         public static final int fullscreen=0x7f060003;
         public static final int groupsButton=0x7f060012;
-        public static final int imageButton1=0x7f060046;
-        public static final int imageButton2=0x7f060047;
-        public static final int label=0x7f060054;
+        public static final int imageButton1=0x7f06004f;
+        public static final int imageButton2=0x7f060050;
+        public static final int label=0x7f06005b;
         public static final int left=0x7f060000;
         public static final int linksButton=0x7f060011;
-        public static final int listView1=0x7f06005f;
+        public static final int listView1=0x7f060066;
         public static final int locationInput=0x7f060017;
         public static final int loginButton=0x7f060009;
         public static final int loginPassword=0x7f060008;
@@ -300,63 +310,71 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int loginUsername=0x7f060007;
         public static final int mainFragment=0x7f060005;
         public static final int margin=0x7f060002;
-        public static final int medListView=0x7f06004b;
-        public static final int medTimePicker2=0x7f060032;
-        public static final int menu_add=0x7f060063;
-        public static final int menu_logout=0x7f060066;
-        public static final int menu_support=0x7f060065;
+        public static final int medListView=0x7f060053;
+        public static final int medTimePicker2=0x7f06002f;
+        public static final int menu_add=0x7f06006a;
+        public static final int menu_logout=0x7f06006d;
+        public static final int menu_support=0x7f06006c;
         public static final int nameInput=0x7f060015;
         public static final int newsButton=0x7f060013;
-        public static final int okCancelBar=0x7f06005d;
-        public static final int orrequired1=0x7f060058;
-        public static final int password1=0x7f06005a;
-        public static final int password2=0x7f06005b;
-        public static final int regEmail=0x7f060040;
-        public static final int regFirstName=0x7f06003e;
-        public static final int regLastName=0x7f06003f;
-        public static final int regRePassword=0x7f06003d;
-        public static final int regUsername=0x7f06003c;
+        public static final int okCancelBar=0x7f060064;
+        public static final int orrequired1=0x7f06005f;
+        public static final int password1=0x7f060061;
+        public static final int password2=0x7f060062;
+        public static final int regEmail=0x7f060049;
+        public static final int regFirstName=0x7f060047;
+        public static final int regLastName=0x7f060048;
+        public static final int regRePassword=0x7f060046;
+        public static final int regUsername=0x7f060045;
         public static final int regform=0x7f06001f;
-        public static final int required=0x7f060057;
+        public static final int required=0x7f06005e;
         public static final int right=0x7f060001;
         public static final int seekBar1=0x7f060025;
         public static final int seekBar2=0x7f060020;
         public static final int selected_view=0x7f060004;
-        public static final int slidingmenumain=0x7f060060;
-        public static final int text=0x7f060055;
-        public static final int textView1=0x7f06004c;
-        public static final int textView2=0x7f060049;
+        public static final int slidingmenumain=0x7f060067;
+        public static final int text=0x7f06005c;
+        public static final int textView=0x7f06003d;
+        public static final int textView1=0x7f060028;
+        public static final int textView2=0x7f06002a;
+        public static final int textView3=0x7f060027;
+        public static final int textView4=0x7f06003e;
+        public static final int textView5=0x7f060043;
         public static final int timePicker=0x7f060019;
-        public static final int url=0x7f06005c;
-        public static final int widget_okcancelbar_cancel=0x7f060061;
-        public static final int widget_okcancelbar_ok=0x7f060062;
+        public static final int url=0x7f060063;
+        public static final int waterCupsView=0x7f060044;
+        public static final int waterText1=0x7f060029;
+        public static final int widget_okcancelbar_cancel=0x7f060068;
+        public static final int widget_okcancelbar_ok=0x7f060069;
     }
     public static final class layout {
         public static final int activity_ibdhelper_main=0x7f030000;
         public static final int activity_login=0x7f030001;
         public static final int activity_settings=0x7f030002;
         public static final int activity_support=0x7f030003;
-        public static final int fragment_add_appointment=0x7f030004;
-        public static final int fragment_add_bm=0x7f030005;
-        public static final int fragment_add_flare=0x7f030006;
-        public static final int fragment_add_food=0x7f030007;
-        public static final int fragment_add_med=0x7f030008;
-        public static final int fragment_appointments=0x7f030009;
-        public static final int fragment_day=0x7f03000a;
-        public static final int fragment_edituser=0x7f03000b;
-        public static final int fragment_foods=0x7f03000c;
-        public static final int fragment_item_detail=0x7f03000d;
-        public static final int fragment_meds=0x7f03000e;
-        public static final int fragment_symptoms=0x7f03000f;
-        public static final int list_add_menu=0x7f030010;
-        public static final int listview_item=0x7f030011;
-        public static final int main=0x7f030012;
-        public static final int menu_frame=0x7f030013;
-        public static final int slidingmenumain=0x7f030014;
-        public static final int widget_ok_cancel_bar=0x7f030015;
+        public static final int blank=0x7f030004;
+        public static final int fragment_add_appointment=0x7f030005;
+        public static final int fragment_add_bm=0x7f030006;
+        public static final int fragment_add_flare=0x7f030007;
+        public static final int fragment_add_food=0x7f030008;
+        public static final int fragment_add_med=0x7f030009;
+        public static final int fragment_appointments=0x7f03000a;
+        public static final int fragment_day=0x7f03000b;
+        public static final int fragment_edituser=0x7f03000c;
+        public static final int fragment_foods=0x7f03000d;
+        public static final int fragment_item_detail=0x7f03000e;
+        public static final int fragment_meds=0x7f03000f;
+        public static final int fragment_symptoms=0x7f030010;
+        public static final int list_add_menu=0x7f030011;
+        public static final int listview_item=0x7f030012;
+        public static final int main=0x7f030013;
+        public static final int menu_frame=0x7f030014;
+        public static final int noservice=0x7f030015;
+        public static final int slidingmenumain=0x7f030016;
+        public static final int widget_ok_cancel_bar=0x7f030017;
     }
     public static final class menu {
-        public static final int ibdhelper_main=0x7f090000;
+        public static final int ibdhelper_main=0x7f0a0000;
     }
     public static final class string {
         public static final int About=0x7f040039;
@@ -366,6 +384,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Add_Med_Name=0x7f04002a;
         public static final int Alarm_hint=0x7f04002e;
         public static final int Appointment_Date=0x7f04002f;
+        public static final int Appointments=0x7f04004f;
         public static final int BMs=0x7f040047;
         public static final int Email=0x7f04001d;
         public static final int FirstName=0x7f04001b;
@@ -380,10 +399,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int RegistrationForm=0x7f04001a;
         public static final int SendFeedback=0x7f040038;
         public static final int SignUp=0x7f04001f;
+        public static final int Sorry=0x7f04004d;
         public static final int Submit=0x7f04002d;
+        public static final int Symptoms=0x7f04004e;
         public static final int UserInformation=0x7f040036;
         public static final int Username=0x7f040021;
         public static final int VerifyPass=0x7f040027;
+        public static final int Water=0x7f040050;
         public static final int action_settings=0x7f040013;
         public static final int add_app_loc=0x7f040031;
         public static final int add_flare_pain=0x7f040032;
@@ -391,9 +413,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int app_name=0x7f040000;
         public static final int bmText=0x7f04003e;
         public static final int cancel=0x7f04003c;
+        public static final int cup=0x7f040052;
         public static final int cups=0x7f040045;
         public static final int flareText=0x7f04003d;
         public static final int flareups=0x7f040040;
+        public static final int future=0x7f040049;
         public static final int global_about=0x7f040002;
         public static final int global_accept=0x7f04000a;
         public static final int global_address=0x7f040009;
@@ -404,15 +428,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int global_phone=0x7f040006;
         public static final int global_submit=0x7f040001;
         public static final int global_website=0x7f040008;
+        public static final int howMuchWater=0x7f04004b;
         public static final int links=0x7f040033;
         public static final int login=0x7f040020;
         public static final int menu_support=0x7f040028;
+        public static final int mumOf=0x7f040051;
         public static final int newWater=0x7f040044;
         public static final int noAcc=0x7f040022;
         public static final int numCups=0x7f040046;
         public static final int numOfBm=0x7f040048;
         public static final int numberOfFlares=0x7f040041;
+        public static final int oz=0x7f04004c;
         public static final int painLevel=0x7f040042;
+        public static final int past=0x7f04004a;
         public static final int pounds=0x7f040025;
         public static final int skipReg=0x7f040023;
         public static final int title_section1=0x7f040015;
@@ -435,10 +463,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class style {
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
@@ -460,17 +484,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f050002;
-        public static final int ButtonMyTheme=0x7f050006;
-        public static final int CheckBoxMyTheme=0x7f050005;
+        public static final int ButtonMyTheme=0x7f050007;
+        public static final int CheckBoxMyTheme=0x7f050006;
         public static final int CustomProgressBar=0x7f050003;
-        public static final int EditTextMyTheme=0x7f050004;
-        public static final int ImageButtonMyTheme=0x7f050007;
-        public static final int MyTheme=0x7f05000c;
-        public static final int ProgressBarMyTheme=0x7f05000b;
-        public static final int SpinnerDropDownItemMyTheme=0x7f05000a;
-        public static final int SpinnerMyTheme=0x7f050008;
-        public static final int SpinnerMyTheme_DropDown=0x7f050009;
+        public static final int EditTextMyTheme=0x7f050005;
+        public static final int ImageButtonMyTheme=0x7f050008;
+        public static final int MyTheme=0x7f05000d;
+        public static final int ProgressBarMyTheme=0x7f05000c;
+        public static final int SpinnerDropDownItemMyTheme=0x7f05000b;
+        public static final int SpinnerMyTheme=0x7f050009;
+        public static final int SpinnerMyTheme_DropDown=0x7f05000a;
         public static final int Validator_Light=0x7f050000;
+        public static final int myheader=0x7f050004;
     }
     public static final class styleable {
         /** Attributes that can be used with a OkCancelBar.
