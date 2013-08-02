@@ -16,16 +16,16 @@ public final class R {
 		public static final int ic_launcher = 0x7f020025;
 	}
 	public static final class id {
-		public static final int contentTextFields = 0x7f06005d;
-		public static final int email = 0x7f060060;
-		public static final int okCancelBar = 0x7f060064;
-		public static final int orrequired1 = 0x7f06005f;
-		public static final int password1 = 0x7f060061;
-		public static final int password2 = 0x7f060062;
-		public static final int required = 0x7f06005e;
-		public static final int url = 0x7f060063;
-		public static final int widget_okcancelbar_cancel = 0x7f060068;
-		public static final int widget_okcancelbar_ok = 0x7f060069;
+		public static final int contentTextFields = 0x7f06005e;
+		public static final int email = 0x7f060061;
+		public static final int okCancelBar = 0x7f060065;
+		public static final int orrequired1 = 0x7f060060;
+		public static final int password1 = 0x7f060062;
+		public static final int password2 = 0x7f060063;
+		public static final int required = 0x7f06005f;
+		public static final int url = 0x7f060064;
+		public static final int widget_okcancelbar_cancel = 0x7f060069;
+		public static final int widget_okcancelbar_ok = 0x7f06006a;
 	}
 	public static final class layout {
 		public static final int main = 0x7f030013;

@@ -72,7 +72,7 @@ public class IBDHelperMainActivity extends Activity{
         
 		ParseUser currentUser = ParseUser.getCurrentUser();
 		if (currentUser != null) {
-			Crouton.makeText(this, "found!", Style.ALERT).show();
+			Crouton.makeText(this, "Welcome Back "+ currentUser.getUsername() + "!", Style.INFO).show();
 			transaction.replace(R.id.mainFragment,new MyDayFragment() );
 			transaction.commit();
 			//new RemoteDataTask().execute();
@@ -176,7 +176,7 @@ public class IBDHelperMainActivity extends Activity{
 	            transaction.replace(R.id.mainFragment, frag);
 	            transaction.commit();
 	    		
-	    	            
+	    	      
 	    	         }});
 
 		

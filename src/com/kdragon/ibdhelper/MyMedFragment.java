@@ -10,6 +10,9 @@ import com.kdragon.other.WebInterface;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.throrinstudio.android.common.libs.validator.Form;
+import com.throrinstudio.android.common.libs.validator.Validate;
+import com.throrinstudio.android.common.libs.validator.validator.NotEmptyValidator;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -38,6 +41,7 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TimePicker;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 
 
@@ -54,10 +58,12 @@ public class MyMedFragment extends Fragment{
 	EditText _medDesciption;
 	CheckBox _medCheckbox;
     private ScheduleClient scheduleClient;
+	private Form _form;
     // This is the date picker used to select the date for our notification
     private TimePicker picker;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+		_form = new Form();
 		Boolean connected = WebInterface.getConnectionStatus(getActivity());
 		
 		super.onCreateView(inflater, container, savedInstanceState);
@@ -70,6 +76,8 @@ public class MyMedFragment extends Fragment{
 		}else{
 			new RemoteDataTask().execute();
 		}
+		
+		
 		
 		return view;
 	}
@@ -111,6 +119,15 @@ public class MyMedFragment extends Fragment{
         Button cancel =(Button)layout.findViewById(R.id.cancelButton);
         _medName = (EditText)layout.findViewById(R.id.nameInput);
 		_medDesciption = (EditText)layout.findViewById(R.id.descriptionInput);
+		
+		Validate name = new Validate(_medName);
+		Validate desc = new Validate(_medDesciption);
+
+		name.addValidator(new NotEmptyValidator(getActivity())); 
+		desc.addValidator(new NotEmptyValidator(getActivity())); 
+		
+		_form.addValidates(name);
+		_form.addValidates(desc);
 		_medCheckbox = (CheckBox)layout.findViewById(R.id.MedCheckBox);
 		
 		// Create a new service client and bind our activity to this service
@@ -124,36 +141,51 @@ public class MyMedFragment extends Fragment{
         	@Override
         	public void onClick(View v) {
         		// TODO Auto-generated method stub
-        		ParseObject medObj = new ParseObject("medicine");
-        		//medObj.put("medName", _medName.getText().toString());
-        		//medObj.put("medDesciption", _medDesciption.getText().toString());
-        		Boolean checked = false;
-	
-        		if (_medCheckbox.isChecked()) {
-        			checked = true;
-        		}
+        		
+    			if((_medName.getText().toString().trim().length() > 0)&&(_medDesciption.getText().toString().trim().length() > 0)){
 
-        		medObj.put("medCheckbox", checked);
+    				ParseObject medObj = new ParseObject("medicine");
+            		medObj.put("medName", _medName.getText().toString());
+            		medObj.put("medDesciption", _medDesciption.getText().toString());
+            		Boolean checked = false;
+    	
+            		if (_medCheckbox.isChecked()) {
+            			checked = true;
+            		}
+
+            		medObj.put("medCheckbox", checked);
+            		
+    	
+            		// Get the date from our datepicker
+            		int hour = picker.getCurrentHour();
+            		int minute = picker.getCurrentMinute();
+        
+            		// Create a new calendar set to the date chosen
+       
+            		Calendar c = Calendar.getInstance();
+        
+            		c.set(Calendar.HOUR_OF_DAY, hour);
+            		c.set(Calendar.MINUTE, minute);
+            		c.set(Calendar.SECOND, 0);
+            		Date d = c.getTime();
+            		
+            		//scheduleClient.setAlarmForNotification(c);
+            		medObj.put("Time1", d);
+            		medObj.saveInBackground();
+            		pw.dismiss();
+            		scheduleClient.setAlarmForNotification(c);
+            		new RemoteDataTask().execute();
+
+
+   				}
+
+   				else {
+
+   					Toast.makeText(getActivity(),"Inputs can not be blank!", Toast.LENGTH_SHORT).show();
+   					
+   				}
         		
-	
-        		// Get the date from our datepicker
-        		int hour = picker.getCurrentHour();
-        		int minute = picker.getCurrentMinute();
-    
-        		// Create a new calendar set to the date chosen
-   
-        		Calendar c = Calendar.getInstance();
-    
-        		c.set(Calendar.HOUR_OF_DAY, hour);
-        		c.set(Calendar.MINUTE, minute);
-        		c.set(Calendar.SECOND, 0);
-        		Date d = c.getTime();
         		
-        		//scheduleClient.setAlarmForNotification(c);
-        		medObj.put("Time1", d);
-        		medObj.saveInBackground();
-        		pw.dismiss();
-        		new RemoteDataTask().execute();
         	}
         	}
        );
@@ -236,6 +268,7 @@ public class MyMedFragment extends Fragment{
                    
                     i.putExtra("name", ob.get(position).getString("medName").toString());
                     i.putExtra("desciption", ob.get(position).getString("medDesciption").toString());
+                    i.putExtra("time", ob.get(position).getCreatedAt().toString());
                     // Open SingleItemView.java Activity
                     startActivity(i);
                 }

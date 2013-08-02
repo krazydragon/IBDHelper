@@ -73,4 +73,6 @@
         <string name="Water">Water</string>
         <string name="mumOf">Number of appoinments today.</string>
         <string name="cup">Cups</string>
+        <string name="del">Delete</string>
+        <string name="goBack">Close</string>
 </resources>

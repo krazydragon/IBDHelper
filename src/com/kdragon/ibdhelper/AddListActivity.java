@@ -37,10 +37,12 @@ public class AddListActivity extends Activity {
     
         TextView detailName =(TextView)findViewById(R.id.detailName);
         TextView detailDesciption =(TextView)findViewById(R.id.detailText);
+        TextView detailTime =(TextView)findViewById(R.id.detailTime);
     	
     	Intent intent = getIntent();
         detailName.setText(intent.getStringExtra("name"));
         detailDesciption.setText(intent.getStringExtra("desciption"));
+        detailTime.setText(intent.getStringExtra("time"));
         
         
     }

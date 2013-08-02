@@ -167,6 +167,8 @@ public class LoginActivity extends Activity implements OnClickListener{
 
 	}else{
 			ParseUser user = new ParseUser();
+			
+
 			if(_regForm.validate()){
 				user.setUsername(_regUserInput.getText().toString());
 				user.setPassword(_regPassInput.getText().toString());

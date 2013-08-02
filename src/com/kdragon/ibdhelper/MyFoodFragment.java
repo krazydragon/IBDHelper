@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import com.kdragon.ibdhelper.MyMedFragment.RemoteDataTask;
 import com.kdragon.other.WebInterface;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -34,6 +35,7 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
 
@@ -199,18 +201,30 @@ public class MyFoodFragment extends Fragment{
 
         	@Override
         	public void onClick(View v) {
-        		// TODO Auto-generated method stub
         		
-        		waterObj.increment("amount", waterNewAmountValue);
-        		waterObj.saveEventually();
-        			waterCount++;
-        			waterNewAmountValue = Integer.parseInt(waterInput.getText().toString());
-        			waterAmountValue = waterAmountValue + waterNewAmountValue;
-        			waterPain.setText(Integer.toString(getPain(waterCount, waterAmountValue)));
-        			
+        		if(waterInput.getText().toString().trim().length() > 0){
+
+        			// TODO Auto-generated method stub
+            		
+            		waterObj.increment("amount", waterNewAmountValue);
+            		waterObj.saveEventually();
+            			waterCount++;
+            			waterNewAmountValue = Integer.parseInt(waterInput.getText().toString());
+            			waterAmountValue = waterAmountValue + waterNewAmountValue;
+            			waterPain.setText(Integer.toString(getPain(waterCount, waterAmountValue)));
+            			
+            		
+            		
+            		pw.dismiss();
+
+   				}
+
+   				else {
+
+   					Toast.makeText(getActivity(),"Input can not be blank!", Toast.LENGTH_SHORT).show();
+   					
+   				}
         		
-        		
-        		pw.dismiss();
         		
         		
         	}

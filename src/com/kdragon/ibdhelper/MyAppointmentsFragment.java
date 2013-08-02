@@ -325,6 +325,7 @@ public class MyAppointmentsFragment extends Fragment {
                    
                     i.putExtra("name", ob.get(position).getString("appName").toString());
                     i.putExtra("desciption", ob.get(position).getString("appDesciption").toString());
+                    i.putExtra("time", ob.get(position).getDate("appTime").toString());
                     // Open SingleItemView.java Activity
                     startActivity(i);
                 }
@@ -339,6 +340,7 @@ public class MyAppointmentsFragment extends Fragment {
                    
                     i.putExtra("name", ob.get(position).getString("appName").toString());
                     i.putExtra("desciption", ob.get(position).getString("appDesciption").toString());
+                    i.putExtra("time", ob.get(position).getDate("appTime").toString());
                     // Open SingleItemView.java Activity
                     startActivity(i);
                 }
@@ -353,6 +355,7 @@ public class MyAppointmentsFragment extends Fragment {
                    
                     i.putExtra("name", ob.get(position).getString("appName").toString());
                     i.putExtra("desciption", ob.get(position).getString("appDesciption").toString());
+                    i.putExtra("time", ob.get(position).getDate("appTime").toString());
                     // Open SingleItemView.java Activity
                     startActivity(i);
                 }
