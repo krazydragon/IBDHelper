@@ -25,6 +25,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -43,6 +44,23 @@ public class AddListActivity extends Activity {
         detailName.setText(intent.getStringExtra("name"));
         detailDesciption.setText(intent.getStringExtra("desciption"));
         detailTime.setText(intent.getStringExtra("time"));
+        
+        Button back = (Button)findViewById(R.id.backButton);
+        
+        
+        back.setOnClickListener(new Button.OnClickListener(){
+
+        	@Override
+        	public void onClick(View v) {
+        		// TODO Auto-generated method stub
+
+        		finish();
+ 
+        	}
+        	}
+        );
+        
+        
         
         
     }

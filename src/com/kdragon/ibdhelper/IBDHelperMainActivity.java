@@ -35,6 +35,7 @@ import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class IBDHelperMainActivity extends Activity{
+	FragmentTransaction transaction;
 
 	
 
@@ -66,7 +67,7 @@ public class IBDHelperMainActivity extends Activity{
 		
 		
 		FragmentManager manager = getFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
+        transaction = manager.beginTransaction();
         
         
         
@@ -279,7 +280,8 @@ public class IBDHelperMainActivity extends Activity{
 		           
 		         String msg = data.getStringExtra("msg"); 
 		         Crouton.makeText(this, msg, Style.INFO).show();
-		        
+		        transaction.replace(R.id.mainFragment,new MyDayFragment() );
+				transaction.commit();
 		         if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
 		        	  //show sign in button
 		        	} else {

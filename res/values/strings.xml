@@ -75,4 +75,9 @@
         <string name="cup">Cups</string>
         <string name="del">Delete</string>
         <string name="goBack">Close</string>
+        <string name="userInfo">User Information</string>
+        <string name="username">Username</string>
+        <string name="name">Name</string>
+        <string name="back">Back</string>
+        <string name="blank">" "</string>
 </resources>

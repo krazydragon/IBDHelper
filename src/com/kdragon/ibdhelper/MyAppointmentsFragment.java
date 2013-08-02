@@ -5,14 +5,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import com.kdragon.ibdhelper.MyMedFragment.RemoteDataTask;
 import com.kdragon.other.WebInterface;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-
-import de.keyboardsurfer.android.widget.crouton.Crouton;
-import de.keyboardsurfer.android.widget.crouton.Style;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
